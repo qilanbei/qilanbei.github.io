@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>instanceOf学习笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于instanceOf的学习笔记">
+<meta name="keywords" content="instanceOf学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="instanceOf学习笔记">
+<meta property="og:url" content="http://yoursite.com/2015/10/10/instanceOf学习笔记/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于instanceOf的学习笔记">
+<meta property="og:updated_time" content="2017-09-16T06:29:15.614Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="instanceOf学习笔记">
+<meta name="twitter:description" content="关于instanceOf的学习笔记">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Niwei</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Canvas学习/" style="font-size: 10px;">Canvas学习</a> <a href="/tags/Gulp学习/" style="font-size: 10px;">Gulp学习</a> <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/NodeJS学习/" style="font-size: 10px;">NodeJS学习</a> <a href="/tags/css相关整理/" style="font-size: 10px;">css相关整理</a> <a href="/tags/git学习/" style="font-size: 10px;">git学习</a> <a href="/tags/instanceOf学习/" style="font-size: 10px;">instanceOf学习</a> <a href="/tags/javascript踩过的坑/" style="font-size: 10px;">javascript踩过的坑</a> <a href="/tags/javascript问题整理/" style="font-size: 10px;">javascript问题整理</a> <a href="/tags/token相关/" style="font-size: 10px;">token相关</a> <a href="/tags/vue学习/" style="font-size: 10px;">vue学习</a> <a href="/tags/关于正则表达式回溯陷阱/" style="font-size: 10px;">关于正则表达式回溯陷阱</a> <a href="/tags/函数学习/" style="font-size: 10px;">函数学习</a> <a href="/tags/模块化开发学习/" style="font-size: 10px;">模块化开发学习</a> <a href="/tags/混合App开发学习/" style="font-size: 10px;">混合App开发学习</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Niwei</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Niwei</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-instanceOf学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/10/instanceOf学习笔记/" class="article-date">
+      <time datetime="2015-10-09T16:58:25.000Z" itemprop="datePublished">2015-10-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      instanceOf学习笔记
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/instanceOf学习笔记/">instanceOf学习笔记</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/instanceOf学习/">instanceOf学习</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>　　<strong> 自用笔记：instanceOf学习 </strong><excerpt in="" index="" |="" 首页摘要=""> </excerpt></p>
+<ul>
+<li><a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+</the></li>
+</ul>
+<h3 id="instanceof运算规则："><a href="#instanceof运算规则：" class="headerlink" title="instanceof运算规则："></a>instanceof运算规则：</h3><p>如果运算符后面的函数 的prototype属性所引用的对象，<br>出现在 运算符前面的对象 的原型链上的话，就返回true；<br>否则就返回false。</p>
+<ol>
+<li>绘制作用域链的规则<br>1》 将整个script标签的全局作用域，定义为0级作用域链。将全局作用域上的数据（变量、函数、对象等等）绘制在该链上。<br>2》由于在词法作用域中，只有函数可以分割作用域。因此，只要遇到函数，就要引申出新的作用域链，级别为当前链的级别 + 1；<br>3》 重复第二步骤，直到没有遇到函数为止。</li>
+<li>变量的搜索原则：当访问一个变量时，<br>1》 首先在当前变量所处作用域链上查找，如果找到就直接使用，并停止查找；<br>2》 如果没有找到，就向上一级链（T - 1）上去查找，如果找到就直接使用，并停止查找；<br>3》 如果没有找到，就继续向上一级链查找。直到0级链，如果找到就直接使用，并停止查找；<br>4》 如果没有找到就报错。<br>注意：<br>1》 如果访问的变量不存在，会搜索整个作用域链（不仅性能低，而且抛出异常。）<br>在实际开发，不推崇所有数据都写在全局上。尽量使用局部变量。推荐使用沙箱。<br>如果在开发中，所有js代码都写在全局上，会造成全局变量的污染。<br>2》同级别的链上的变量互不干扰。</li>
+<li>在函数执行的时候，会创建一个执行的环境，包括activeObject（活动对象）以及作用域链<br>1&gt; activeObject: 存储的是所有在函数内部定义的变量，以及函数的形参；<br>会将变量名字以及形参名字作为该对象的属性来存储</li>
+<li>闭包<br>1》概念：一个函数有权去访问另一个函数的内部数据。<br>2》缺点： 会造成函数内部的数据常驻内存，从而引发内存泄漏的问题。<br>3》解决的问题：解决在函数外部无法访问函数内部的数据。s<br>4》为了防止闭包导致内存泄漏，在使用完闭包后，将其赋值为null即可。<br>5》闭包怎么缓存数据？因为在函数内部有方法（函数）对其有引用，并且又将其返回到外部作用域上的一个变量接收。</li>
+<li>垃圾回收机制：GC（Garbage Collection）</li>
+<li>　引用计数<br>如果一个变量被另一个变量引用，那么该变量的应用计数+1；当这个变量不再引用该变量（该变量被回收掉了）时，<br>此时这个变量的引用计数 - 1；<br>GC会在一定时间间隔去查看每个变量的计数，如果为0， 就将其占用的内存回收。<br>缺点： 循环引用：会造成无法回收变量的内存<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">a&#123; val : b&#125; , b&#123;val:ａ&#125; b = null;(a = null)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>２.　标记清除<br>从当前文档根部（window对象）找一条路径，如果能到达该变量，那么说明此变量不应该 被回收掉<br>反之，应该被回收其所占用的内存。<br>–如果变量进入某个执行环境，那么给其标记为 “进入环境”；<br>–如果上述执行环境执行完成，被销毁，那么该环境内的所有变量都被标记为“已出环境”<br>–如果变量被标记为已出环境，就会被回收掉其占用的内存空间。</p>
+<ol>
+<li>闭包的应用</li>
+<li>计数器</li>
+<li>对象的私有属性</li>
+<li>解决fib数列递归性能</li>
+<li>沙箱模式： 好处： 不会污染全局变量（或者其他作用域的变量），并且能保证自己的代码安全执行。<br>特性：a: 能分割作用域，不会污染全局 fn<br>b: 在分割后的作用域内部的代码要能自执行。fn()<br>结构：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(function ()&#123;</div><div class="line">//代码块</div><div class="line">window.fn = fn;</div><div class="line">&#125;());</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/10/10/instanceOf学习笔记/">instanceOf学习笔记</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Niwei 的个人博客">Niwei</a></p>
+        <p><span>发布时间:</span>2015年10月10日 - 00时58分</p>
+        <p><span>最后更新:</span>2017年09月16日 - 14时29分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/10/10/instanceOf学习笔记/" title="instanceOf学习笔记">http://yoursite.com/2015/10/10/instanceOf学习笔记/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2015/10/10/instanceOf学习笔记/　　作者: Niwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2015/10/26/Canvas学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Canvas学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/27/css相关整理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css相关整理</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#instanceof运算规则："><span class="toc-number">1.</span> <span class="toc-text">instanceof运算规则：</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2015/10/10/instanceOf学习笔记/" data-title="instanceOf学习笔记" data-url="http://yoursite.com/2015/10/10/instanceOf学习笔记/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2015/10/26/Canvas学习笔记/" title="上一篇: Canvas学习笔记">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2015/09/27/css相关整理/" title="下一篇: css相关整理">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/05/26/token相关/">token相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/10/关于正则表达式/">关于正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/22/vue学习笔记/">vue学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/26/javascript踩过的坑/">javascript踩过的坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/06/NodeJS学习/">NodeJS学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/26/Gulp学习笔记/">Gulp学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/git学习笔记/">Git学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/06/模块化开发/">模块化开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/06/混合App开发/">混合App开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/26/Canvas学习笔记/">Canvas学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/10/instanceOf学习笔记/">instanceOf学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/27/css相关整理/">css相关整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/26/javascript问题整理/">javascript问题整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/26/函数的声明和调用方式/">函数的声明和调用方式</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/23/hello-world/">Hello World</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 Niwei
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
