@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/01/01/如何搭建vue项目/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="如何搭建vue项目">
-<meta property="og:updated_time" content="2017-10-06T09:35:12.969Z">
+<meta property="og:updated_time" content="2017-10-06T09:38:00.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何搭建vue项目">
 <meta name="twitter:description" content="如何搭建vue项目">
@@ -278,18 +278,11 @@
 </ul>
 <ol>
 <li>开发环境要求<br>1&gt; Node.js: javascript运行环境，不同系统不能直接运行各种编程语言;<br>2&gt; npm: Node.js下的包管理器;<br>3&gt; webpack: .vue的Vue组件 或者像 微信小程序的.wxml和.wxss等自定义的组件都无法被用户端的各种浏览器解析，需要被翻译和打包成.js文件;<br>4&gt; vue-cli: Vue的脚手架工具，主要作用：目录结构、本地调试、代码部署、热加载、单元测试，相当于按照设计好的图来盖房子。</li>
-<li>安装环境<br>1&gt; 安装nodejs<br>Node.js安装包及源码下载地址为：<a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a><br>Windows 安装包(.msi):<br>32 位安装包下载地址 : <a href="https://nodejs.org/dist/v4.4.3/node-v4.4.3-x86.msi" target="_blank" rel="external">https://nodejs.org/dist/v4.4.3/node-v4.4.3-x86.msi</a><br>64 位安装包下载地址 : <a href="https://nodejs.org/dist/v4.4.3/node-v4.4.3-x64.msi" target="_blank" rel="external">https://nodejs.org/dist/v4.4.3/node-v4.4.3-x64.msi</a><br>按照提示安装即可。node安装完成之后，自带npm<br>★ 如果npm下载的慢，可以使用淘宝镜像：<br>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a><br>2&gt; vue的安装依赖于node.js，所以要先安装node.js再安装vue，此时npm 版本需要大于 3.0，如果低于此版本需要升级它 ，升级 npm: cnpm install npm -g；<br>安装全局vue-cli脚手架,用于帮助搭建所需的模板框架：<br>cnpm install -g vue-cli；<br>或者在下载vue-cli的后面加上淘宝镜像：<br>npm install -g vue-cli –registry=<a href="https://registry.npm.taobao.org；" target="_blank" rel="external">https://registry.npm.taobao.org；</a><br>检查是否安装成功，在终端执行：vue；回车，如果出现vue信息说明安装成功，或者输入vue –version，返回版本号说明安装成功。<br>3&gt; 此时环境已经搭建好了，下面用vue-cli构建项目<br>在终端执行命令：<br>// 创建一个基于webpack模板的新项目：<br>vue init webpack my-project<br>//命令执行后，会弹出以下配置信息：<br>vue init webpack my-project     //回车 </li>
-</ol>
-<p>? Project name my-project<br>//输入项目名字<br>? Project description study vue<br>//输入项目描述<br>? Author niwei<br>//作者<br>? Vue build standalone</p>
-<p>? Install vue-router? Yes<br>//是否安装vue-router，对于单页应用,官方提供了vue-router进行路由跳转的处理<br>? Use ESLint to lint your code? Yes<br>//是否进行eslint代码检测，ESLint是一个用来识别 ECMAScript 并且按照规则给出报告的代码检测工具<br>? Pick an ESLint preset Standard<br>//选择一个ESLint预设的标准<br>? Setup unit tests with Karma + Mocha? Yes<br>//是否单元测试<br>? Setup e2e tests with Nightwatch? Yes<br>// 是否端到端的测试</p>
-<p>   vue-cli · Generated “my-project”.</p>
-<p>   To get started:</p>
-<pre><code>cd my-project
-npm install
-npm run dev
-</code></pre><p>   Documentation can be found at <a href="https://vuejs-templates.github.io/webpack" target="_blank" rel="external">https://vuejs-templates.github.io/webpack</a><br>// 进入到项目文件：cd my-project  （和package.json文件同路径）<br>// 根据package.json文件安装相应依赖： cnpm install<br> 回车，发现文件下多了一个node_modules文件夹（里面就是安装的各种依赖）</p>
-<ol>
-<li>检测环境是否搭建成功<br>在终端执行： npm run dev</li>
+<li><p>安装环境<br>1&gt; 安装nodejs<br>Node.js安装包及源码下载地址为：<a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a><br>Windows 安装包(.msi):<br>32 位安装包下载地址 : <a href="https://nodejs.org/dist/v4.4.3/node-v4.4.3-x86.msi" target="_blank" rel="external">https://nodejs.org/dist/v4.4.3/node-v4.4.3-x86.msi</a><br>64 位安装包下载地址 : <a href="https://nodejs.org/dist/v4.4.3/node-v4.4.3-x64.msi" target="_blank" rel="external">https://nodejs.org/dist/v4.4.3/node-v4.4.3-x64.msi</a><br>按照提示安装即可。node安装完成之后，自带npm<br>★ 如果npm下载的慢，可以使用淘宝镜像：<br>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a><br>2&gt; vue的安装依赖于node.js，所以要先安装node.js再安装vue，此时npm 版本需要大于 3.0，如果低于此版本需要升级它 ，升级 npm: cnpm install npm -g；<br>安装全局vue-cli脚手架,用于帮助搭建所需的模板框架：<br>cnpm install -g vue-cli；<br>或者在下载vue-cli的后面加上淘宝镜像：<br>npm install -g vue-cli –registry=<a href="https://registry.npm.taobao.org；" target="_blank" rel="external">https://registry.npm.taobao.org；</a><br>检查是否安装成功，在终端执行：vue；回车，如果出现vue信息说明安装成功，或者输入vue –version，返回版本号说明安装成功。<br>3&gt; 此时环境已经搭建好了，下面用vue-cli构建项目<br>在终端执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">// 创建一个基于webpack模板的新项目：</div><div class="line">vue init webpack my-project</div><div class="line">//命令执行后，会弹出以下配置信息：</div><div class="line">vue init webpack my-project     //回车 </div><div class="line"></div><div class="line">? Project name my-project</div><div class="line">//输入项目名字</div><div class="line">? Project description study vue</div><div class="line">//输入项目描述</div><div class="line">? Author niwei</div><div class="line">//作者</div><div class="line">? Vue build standalone</div><div class="line"></div><div class="line">? Install vue-router? Yes</div><div class="line">//是否安装vue-router，对于单页应用,官方提供了vue-router进行路由跳转的处理</div><div class="line">? Use ESLint to lint your code? Yes</div><div class="line">//是否进行eslint代码检测，ESLint是一个用来识别 ECMAScript 并且按照规则给出报告的代码检测工具</div><div class="line">? Pick an ESLint preset Standard</div><div class="line">//选择一个ESLint预设的标准</div><div class="line">? Setup unit tests with Karma + Mocha? Yes</div><div class="line">//是否单元测试</div><div class="line">? Setup e2e tests with Nightwatch? Yes</div><div class="line">// 是否端到端的测试</div><div class="line"></div><div class="line">   vue-cli · Generated &quot;my-project&quot;.</div><div class="line"></div><div class="line">   To get started:</div><div class="line"></div><div class="line">     cd my-project</div><div class="line">     npm install</div><div class="line">     npm run dev</div><div class="line"></div><div class="line">   Documentation can be found at https://vuejs-templates.github.io/webpack</div><div class="line">// 进入到项目文件：cd my-project  （和package.json文件同路径）</div><div class="line">// 根据package.json文件安装相应依赖： cnpm install</div><div class="line"> 回车，发现文件下多了一个node_modules文件夹（里面就是安装的各种依赖）</div></pre></td></tr></table></figure>
+</li>
+<li><p>检测环境是否搭建成功<br>在终端执行： npm run dev</p>
+</li>
 </ol>
 
       
@@ -302,7 +295,7 @@ npm run dev
         <p><span>本文标题:</span><a href="/2017/01/01/如何搭建vue项目/">如何搭建vue项目</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Niwei 的个人博客">Niwei</a></p>
         <p><span>发布时间:</span>2017年01月01日 - 20时12分</p>
-        <p><span>最后更新:</span>2017年10月06日 - 17时35分</p>
+        <p><span>最后更新:</span>2017年10月06日 - 17时38分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/01/01/如何搭建vue项目/" title="如何搭建vue项目">http://yoursite.com/2017/01/01/如何搭建vue项目/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/01/01/如何搭建vue项目/　　作者: Niwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
