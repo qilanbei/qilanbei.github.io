@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>javascript踩过的坑 | Hexo</title>
+  <title>关于跨域总结 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript踩过的坑">
-<meta name="keywords" content="javascript踩过的坑">
+  <meta name="description" content="关于跨域总结">
+<meta name="keywords" content="关于跨域总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript踩过的坑">
-<meta property="og:url" content="http://yoursite.com/2016/06/26/javascript踩过的坑/index.html">
+<meta property="og:title" content="关于跨域总结">
+<meta property="og:url" content="http://yoursite.com/2016/04/19/关于跨域总结/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="javascript踩过的坑">
-<meta property="og:updated_time" content="2017-09-28T14:29:33.878Z">
+<meta property="og:description" content="关于跨域总结">
+<meta property="og:updated_time" content="2017-10-25T09:25:12.952Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript踩过的坑">
-<meta name="twitter:description" content="javascript踩过的坑">
+<meta name="twitter:title" content="关于跨域总结">
+<meta name="twitter:description" content="关于跨域总结">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -229,11 +229,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-javascript踩过的坑" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-关于跨域总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/26/javascript踩过的坑/" class="article-date">
-      <time datetime="2016-06-26T15:24:34.000Z" itemprop="datePublished">2016-06-26</time>
+      <a href="/2016/04/19/关于跨域总结/" class="article-date">
+      <time datetime="2016-04-19T15:19:24.000Z" itemprop="datePublished">2016-04-19</time>
 </a>
     </div>
   
@@ -246,7 +246,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      javascript踩过的坑
+      关于跨域总结
     </h1>
   
 
@@ -255,13 +255,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/javascript踩过的坑/">javascript踩过的坑</a>
+    <a class="article-category-link" href="/categories/关于跨域总结/">关于跨域总结</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript踩过的坑/">javascript踩过的坑</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/关于跨域总结/">关于跨域总结</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -271,22 +271,18 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>　　<strong> 自用笔记：javascript踩过的坑 </strong><excerpt in="" index="" |="" 首页摘要=""> </excerpt></p>
+        <p>　　<strong> 自用笔记：关于跨域总结 </strong><excerpt in="" index="" |="" 首页摘要=""> </excerpt></p>
 <ul>
 <li><a id="more"></a>
-<the rest="" of="" contents="" |="" 余下全文="">
-
-</the></li>
+<the rest="" of="" contents="" |="" 余下全文=""><h4 id="有关跨域知识总结"><a href="#有关跨域知识总结" class="headerlink" title="有关跨域知识总结"></a>有关跨域知识总结</h4></the></li>
 </ul>
-<h3 id="javaScript踩过的坑"><a href="#javaScript踩过的坑" class="headerlink" title="javaScript踩过的坑"></a>javaScript踩过的坑</h3><ol>
-<li>click事件累加绑定<br>情况一：(未复现)<br>在页面中为一个元素绑定事件，事件执行后页面未刷新且将元素隐藏，但是元素绑定的事件未解绑，然后你再次点击，元素又被绑定个一次点击事件，这样第二次点击就会执行两次;<br>情况二：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(&quot;#cover&quot;).mouseover(function ()&#123;</div><div class="line">	$(&apos;#btn&apos;).click(function ()&#123;</div><div class="line">		alert(&apos;测试累加绑定次数&apos;)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">// js中嵌套的click事件，点击多次会出现累加绑定，调用多次alert；</div></pre></td></tr></table></figure>
+<ol>
+<li>什么是跨域，为什么会发生跨域<br>跨域是浏览器行为，是浏览器为安全性考虑实施的安全策略，是对js施加的安全限制，由于浏览器的同源策略，一般网站的协议protocol、主机host、端口号port这三个中的任意一个不同，网站间的数据请求与传输边构成了跨域调用。<br>由于ajax的实现原理是由XMLHttpRequest对象实现的，而浏览器对XMLHttpRequest对象有跨域限制，当通过ajax请求不同域下的资源的时候，请求会发送给服务器，只是服务器返回响应信息给浏览器时，被浏览器拦截了</li>
+<li>举例说明<br>举例之前，先以<a href="http://www.baidu.com为例，普及一些概念：" target="_blank" rel="external">http://www.baidu.com为例，普及一些概念：</a><br>1&gt;在这里http就是一种协议，www.baidu.com是域名，浏览器默认http端口是80端口,https的端口号是443;<br>2&gt;在www.baidu.com中，.com是顶级域名；baidu.com是一级域名；www.baidu.com二级域名，类似的bbs.baidu.com和tieba.baidu.com都是二级域名。<br>3&gt;列举能发生跨域的url(也许地址不存在，仅是为了能够更加具体，举得例子)：<br><a href="http://www.baidu.com和https://www.baidu.com：会发生跨域，由于协议不一样；" target="_blank" rel="external">http://www.baidu.com和https://www.baidu.com：会发生跨域，由于协议不一样；</a><br><a href="http://www.taobao.com和http:www.google.com：会发生跨域，域名不一样；" target="_blank" rel="external">http://www.taobao.com和http:www.google.com：会发生跨域，域名不一样；</a><br><a href="http://www.baidu.com/index.html和http://www.baidu.com:4000/index.html：会发生跨域，端口号不一样；" target="_blank" rel="external">http://www.baidu.com/index.html和http://www.baidu.com:4000/index.html：会发生跨域，端口号不一样；</a><br><a href="http://www.baidu.com/index.html和http://tieba.baidu.com/index.html：会发生跨域，域名不一样；" target="_blank" rel="external">http://www.baidu.com/index.html和http://tieba.baidu.com/index.html：会发生跨域，域名不一样；</a><br><a href="http://www.baidu.com/index.html和http://www.baidu.com/src/demo.html" target="_blank" rel="external">http://www.baidu.com/index.html和http://www.baidu.com/src/demo.html</a> 不会发生跨域行为，只是所在的目录不一样.</li>
+<li>跨域解决方案<br>1&gt;在顶级域名相同的情况下，可以通过domain.name来解决，同时设置domain.name=”设置的域名”；<br>2&gt;jsonp跨域原理是由于浏览器对script，link等标签的src属性没有跨域限制，所以jsonp原理就是通过动态创建一个script的标签，添加到head中，添加回调函数，将格式化的数据拼接到url上，设置超时时间，实现监听状态，指定script的src属性，通过src发送请求实现的跨域，使用后清除script标签和回调函数；由于是通过拼接url实现的跨域，所以只支持get请求方式。<br>使用 jQuery 集成的 $.ajax 实现 JSONP 跨域调用:<br>jquery的ajax调用：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">	url: &apos;&apos;,</div><div class="line">	data:data,</div><div class="line">	cache: false,</div><div class="line">	timeout: 5000,</div><div class="line">	jsonp: &apos;callback&apos;,//jsonp字段的含义为服务器通过什么字段获取回调函数的名称</div><div class="line">	jsonpCallback:&apos;jsonpCallback&apos;,</div><div class="line">	success: function (data)&#123;</div><div class="line">		console.log(&apos;ajax success callback&apos;);</div><div class="line">	&#125;,</div><div class="line">	error: function(jqXHR,textStatus,errorThrown)&#123;</div><div class="line">	console.log(textStatu+&apos;&apos;+errorThrown);</div><div class="line">	&#125;</div><div class="line">	&#125;)</div><div class="line">	//利用 JSONP 格式返回的值一段要立即执行的 JavaScript 代码，所以不会像 ajax 的 XmlHttpRequest 那样可以监听不同事件对数据进行不同处理</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>情况三：<br>jquery嵌套event也会触发多次，在一次写的代码的时候就遇见过，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$(&quot;#btn_submit&quot;).on(&quot;click&quot;, function ()&#123;</div><div class="line">	// 模态框显示</div><div class="line">	$(&apos;模态框&apos;).modal(&quot;show&quot;);</div><div class="line">	// 模态框里的按钮</div><div class="line">	$(&apos;#btn&apos;).on(&quot;click&quot;, function ()&#123;</div><div class="line">		if(输入验证正确)&#123;</div><div class="line">			ajax操作</div><div class="line">		&#125;</div><div class="line">	&#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>这时，click事件会出现累加绑定的现象，当输入不正确的时候，点击btn按钮，验证不通过不会触发ajax操作，但是click时间会累加绑定事件，当输入正确，点击btn按钮的时候，会触发两次绑定的事件，查看发现调用了两次ajax操作。</p>
-<h5 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h5><p>1&gt; 情况一可以将元素彻底删除，重新生成，在重新绑定事件，这样每次绑定的事件都是重新绑定的，不会出现累加的情况，或者使用以下方法；<br>2&gt; 如果是使用bind绑定的事件，可以用unbind方法解除绑定，现在bind方法已经不推荐使用了；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#btn&apos;).unbind(&quot;click&quot;).bind(&quot;click&quot;, function ()&#123;&#125;)</div></pre></td></tr></table></figure></p>
-<p>3&gt; 如果使用了jquery的on方法绑定事件，可以有两种方式处理：<br>3.1&gt; 使用one()方法为元素绑定一个一次性的事件处理函数，这个事件只会执行一次；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#btn&apos;).one(&quot;click&quot;, function ()&#123;&#125;)</div></pre></td></tr></table></figure></p>
-<p>3.2&gt; 使用off()方法解除绑定；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#btn&apos;).off(&quot;click&quot;).on(&quot;click&quot;, function ()&#123;&#125;)</div></pre></td></tr></table></figure></p>
+<p>3&gt;cors方法，参考阮一峰：<a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2016/04/cors.html</a></p>
 
       
     </div>
@@ -295,13 +291,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/06/26/javascript踩过的坑/">javascript踩过的坑</a></p>
+        <p><span>本文标题:</span><a href="/2016/04/19/关于跨域总结/">关于跨域总结</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Niwei 的个人博客">Niwei</a></p>
-        <p><span>发布时间:</span>2016年06月26日 - 23时24分</p>
-        <p><span>最后更新:</span>2017年09月28日 - 22时29分</p>
+        <p><span>发布时间:</span>2016年04月19日 - 23时19分</p>
+        <p><span>最后更新:</span>2017年10月25日 - 17时25分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/06/26/javascript踩过的坑/" title="javascript踩过的坑">http://yoursite.com/2016/06/26/javascript踩过的坑/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/06/26/javascript踩过的坑/　　作者: Niwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/04/19/关于跨域总结/" title="关于跨域总结">http://yoursite.com/2016/04/19/关于跨域总结/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/04/19/关于跨域总结/　　作者: Niwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -314,18 +310,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/10/27/浏览器兼容性总结/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/04/26/Gulp学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          浏览器兼容性
+          Gulp学习笔记
         
       </div>
     </a>
   
   
-    <a href="/2016/05/10/css渐变/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">css渐变</div>
+    <a href="/2016/03/10/你应该知道的css技巧/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">你应该知道的css技巧</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -336,7 +332,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#javaScript踩过的坑"><span class="toc-number">1.</span> <span class="toc-text">javaScript踩过的坑</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#解决方法："><span class="toc-number">1.0.1.</span> <span class="toc-text">解决方法：</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#有关跨域知识总结"><span class="toc-number">1.</span> <span class="toc-text">有关跨域知识总结</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -384,7 +380,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/06/26/javascript踩过的坑/" data-title="javascript踩过的坑" data-url="http://yoursite.com/2016/06/26/javascript踩过的坑/"></div>
+    <div class="ds-thread" data-thread-key="2016/04/19/关于跨域总结/" data-title="关于跨域总结" data-url="http://yoursite.com/2016/04/19/关于跨域总结/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -407,13 +403,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/10/27/浏览器兼容性总结/" title="上一篇: 浏览器兼容性">
+            <a href="/2016/04/26/Gulp学习笔记/" title="上一篇: Gulp学习笔记">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/05/10/css渐变/" title="下一篇: css渐变">
+            <a href="/2016/03/10/你应该知道的css技巧/" title="下一篇: 你应该知道的css技巧">
                 <i class="fa fa-angle-right"></i>
             </a>
         
