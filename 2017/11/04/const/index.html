@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/04/const/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="let and const">
-<meta property="og:updated_time" content="2017-11-06T13:54:39.197Z">
+<meta property="og:updated_time" content="2017-11-06T13:58:31.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="let and const">
 <meta name="twitter:description" content="let and const">
@@ -271,13 +271,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>??<strong> ?????let and const </strong><excerpt in="" index="" |="" ????=""></excerpt></p>
+        <p>　　<strong> 自用笔记：let and const </strong><excerpt in="" index="" |="" 首页摘要=""> </excerpt></p>
 <ul>
 <li><a id="more"></a>
-<the rest="" of="" contents="" |="" ????=""><h4 id="let-const"><a href="#let-const" class="headerlink" title="let?const???"></a>let?const???</h4>let?const?????????????????<br>let???????????????????????????????????var???????undefined<br>const??????????????????????</the></li>
+<the rest="" of="" contents="" |="" 余下全文=""><h4 id="let和const的区别"><a href="#let和const的区别" class="headerlink" title="let和const的区别"></a>let和const的区别</h4>let与const都是只在声明所在的块级作用域内有效<br>let用来定义变量，无论是不是严格模式下，声明未初始化的时候，都不会报错，和var作用一样，返回undefined<br>const用来定义常量，而且声明时必须初始化，否则报错</the></li>
 </ul>
-<p>const??????????? ????????????????<br>const a = {b: 9};<br>    a.b = 1;<br>    console.log(a);<br>????????????????????????????????????????<br>const????????????????????????????????????const?????????????<br>?????Object.freeze(name)????????;??Object.freeze(a);???a????????????</p>
-<p>??????<br>var let = 1; ??????????????????let?1<br>const let = 1;????????????</p>
+<p>const不能修改定义的常量的值 但是可以修改常量的属性值，例如：<br>const a = {b: 9};<br>    a.b = 1;<br>    console.log(a);<br>因为对于复合类型的变量，如数组和对象，变量名不指向数据，而是指向数据所在的地址。<br>const命令只是保证变量名指向的地址不变，并不保证该地址的数据不变，所以可以修改const定义的数组或者对象的数值；<br>也可以通过Object.freeze(name)方法冻结这个常量;例如Object.freeze(a);这时候a的属性值就不能随意更改了</p>
+<p>有意思的是：<br>var let = 1; 在严格模式下报错，非严格模式下，打印let是1<br>const let = 1;在不在严格模式下都会报错</p>
 
       
     </div>
@@ -289,7 +289,7 @@
         <p><span>本文标题:</span><a href="/2017/11/04/const/">let and const</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Niwei 的个人博客">Niwei</a></p>
         <p><span>发布时间:</span>2017年11月04日 - 23时16分</p>
-        <p><span>最后更新:</span>2017年11月06日 - 21时54分</p>
+        <p><span>最后更新:</span>2017年11月06日 - 21时58分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/11/04/const/" title="let and const">http://yoursite.com/2017/11/04/const/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/11/04/const/　　作者: Niwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -318,7 +318,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#let-const"><span class="toc-number">1.</span> <span class="toc-text">let?const???</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#let和const的区别"><span class="toc-number">1.</span> <span class="toc-text">let和const的区别</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
