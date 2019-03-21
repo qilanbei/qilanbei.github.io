@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: QILANBEI
-subtitle: QILANBEI
+title: Talent and beauty coexist
+subtitle:
 description:
 keywords:
 author: Norah
@@ -78,4 +78,5 @@ theme: icarus
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/qilanbei/qilanbei.github.io #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io

@@ -11,6 +11,6 @@ An imaginative front-end worker.
 
 技术交流请关注github: https://github.com/qilanbei
 
-喵~  其实我很懒的~~~~
+喵~  其实我很懒~~~~
 
 
