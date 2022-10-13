@@ -1,0 +1,2748 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>Canvas学习笔记 - Talent and beauty coexist</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    
+    <meta name="description" content="关于Canvas的学习笔记">
+<meta name="keywords" content="Canvas学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Canvas学习笔记">
+<meta property="og:url" content="http://yoursite.com/2015/10/26/canvas/index.html">
+<meta property="og:site_name" content="Talent and beauty coexist">
+<meta property="og:description" content="关于Canvas的学习笔记">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/canvas_curves.png">
+<meta property="og:image" content="http://yoursite.com/images/bolang.png">
+<meta property="og:image" content="http://yoursite.com/images/circle-icon.png">
+<meta property="og:image" content="http://yoursite.com/images/drawImg-slicing.png">
+<meta property="og:image" content="http://yoursite.com/images/slice-img.png">
+<meta property="og:image" content="http://yoursite.com/images/tile-picture.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas-translate.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas-scaling.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas-rect.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas-transform-axis.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas-draw-rect.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas-rota-axis.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas-rotate-circle.png">
+<meta property="og:updated_time" content="2020-11-05T08:20:24.997Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Canvas学习笔记">
+<meta name="twitter:description" content="关于Canvas的学习笔记">
+<meta name="twitter:image" content="http://yoursite.com/images/canvas_curves.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="../source/js/love.js"></script>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            <!---->
+                <!--<img src="/" alt="Canvas学习笔记" height="28">-->
+            <!---->
+                QILANBEI
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="http://github.com/qilanbei">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2015-10-25T17:56:14.000Z">2015-10-26</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/前端绘图/">前端绘图</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    43 minutes read (About 6501 words)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> 人浏览
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Canvas学习笔记
+            
+        </h1>
+        <div class="content">
+            <ul>
+<li>关于Canvas的学习笔记<a id="more"></a>
+<the rest of contents | 余下全文>
+
+</the></li>
+</ul>
+<h3 id="canvas简介"><a href="#canvas简介" class="headerlink" title="canvas简介"></a>canvas简介</h3><ul>
+<li>概念：H5 提供的一个新的标签元素</li>
+<li>Canvas是指可以在其上面通过脚本语言（通常为js） 绘制图形、图像以及制作动画的标签</li>
+<li>Canvas本身不具备绘制能力，只是负责展示</li>
+<li>在浏览器不支持Canvas时，会将其当做div标签来解析</li>
+<li>在IE中，会将其当做文本节点来解析</li>
+<li><p>检查支持性</p>
+  <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'tutorial'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext)&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>);</span><br><span class="line">  <span class="hljs-comment">// drawing code here</span></span><br><span class="line">&#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">  <span class="hljs-comment">// canvas-unsupported code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><ul>
+<li>创建一个画布 <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span>&gt;</span>在浏览器不支持canvas时，会显示这段文本。<span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>在创建一canvas标签时，如果没有指定宽和高，默认为 300 * 150 （px）</li>
+<li>要用canvas的相关属性设置其宽和高；否则，用其他方式指定canvas的宽和高，会在默认值的基础上进行缩放。而在缩放时，并没有增加canvas内部的像素点的个数。</li>
+</ul>
+<ul>
+<li><p>获取绘制工具</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 第1步：获取相应画布</span></span><br><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-comment">// 第2步：获取该画布的绘制工具</span></span><br><span class="line"><span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d|WebGL'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>getContext方法：参数为 ‘2d’ or ‘WebGL’<ul>
+<li>2d:    获取绘制平面图形的工具</li>
+<li>WebGL：获取绘制立体图形的工具</li>
+</ul>
+</li>
+<li>在课程内，只学习绘制 2d 图形</li>
+<li>绘制工具是由归属的。只有画布自己的绘制工具 可以在本身上绘制图形、图像。</li>
+</ul>
+<h3 id="canvas检查支持性"><a href="#canvas检查支持性" class="headerlink" title="canvas检查支持性"></a>canvas检查支持性</h3><p>如果需要在UI上体现，我们可以在 <code>canvas</code> 标签内部放置元素，如果浏览器不支持 <code>canvas</code> 标签，那么内部的元素就会被浏览器解析，而显示出来。<br><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"stockGraph"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"150"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Canvas not be support.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>除此之外，我们也可以用js的方式来检查。<br><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'c1'</span>);</span><br><span class="line"><span class="hljs-comment">//如果canvas元素没有getContext方法，那么就证明浏览器不支持canvas。</span></span><br><span class="line"><span class="hljs-keyword">if</span>(!canvas.getContext)&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Canvas not be support.'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h3><ul>
+<li>原点 在canvas的左上角</li>
+<li>X轴：在原点的水平方向</li>
+<li>Y轴：在原点的垂直方向</li>
+</ul>
+<h3 id="基本绘制工具"><a href="#基本绘制工具" class="headerlink" title="基本绘制工具"></a>基本绘制工具</h3><ul>
+<li>移动笔触moveTo(x, y) x 确定点的 横坐标；y 确定点的 纵坐标。</li>
+<li>画线lineTo(x, y): 从当前笔触所在点 连线 到 指定点。</li>
+</ul>
+<h3 id="绘制直线步骤"><a href="#绘制直线步骤" class="headerlink" title="绘制直线步骤"></a>绘制直线步骤</h3><ul>
+<li>移动笔触moveTo</li>
+<li>画线lineTo</li>
+<li>描边stroke 或 填充fill</li>
+</ul>
+<h3 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h3><p>不同于 svg，canvas 只支持两种形式的图形绘制：矩形和路径（由一系列点连成的线段），所有其他类型的图形都是通过一条或者多条路径组合而成的，不过，我们拥有众多路径生成的方法让复杂图形的绘制成为了可能。</p>
+<p> 首先，我们回到矩形的绘制中，canvas提供了三种方法绘制矩形：</p>
+<ul>
+<li>绘制一个填充的矩形: fillRect(x, y, width, height) </li>
+<li>绘制一个矩形的边框: strokeRect(x, y, width, height) </li>
+<li><p>清除指定矩形区域，让清除部分完全透明: clearRect(x, y, width, height)</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 第1步：获取相应画布</span></span><br><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-comment">// 第2步：获取该画布的绘制工具</span></span><br><span class="line">	<span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>);</span><br><span class="line">	<span class="hljs-comment">// 绘制一个填充的矩形: fillRect(x, y, width, height)</span></span><br><span class="line">	<span class="hljs-comment">// ctx.fillRect(25, 25, 100, 100)</span></span><br><span class="line">	<span class="hljs-comment">// 清除指定矩形区域，让清除部分完全透明: clearRect(x, y, width, height)</span></span><br><span class="line">	<span class="hljs-comment">// ctx.clearRect(25, 25, 100, 100)</span></span><br><span class="line">	<span class="hljs-comment">// ctx.clearRect(45, 45, 60, 60)</span></span><br><span class="line">	<span class="hljs-comment">// 绘制一个矩形的边框: strokeRect(x, y, width, height)</span></span><br><span class="line">	ctx.strokeRect(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h3><ul>
+<li><p>绘制路径步骤：</p>
+<ul>
+<li>首先，你需要创建路径起始点。</li>
+<li>然后你使用画图命令去画出路径。</li>
+<li>之后闭合路径closePath(),不是必需的。</li>
+<li>一旦路径生成，你就能通过描边或填充路径区域来渲染图形。</li>
+</ul>
+</li>
+<li><p>路径API:</p>
+<ul>
+<li>beginPath(): 新建一条路径，生成之后，图形绘制命令被指向到路径上生成路径。</li>
+<li>closePath(): 闭合路径之后图形绘制命令又重新指向到上下文中。</li>
+<li>stroke(): 通过线条来绘制图形轮廓。</li>
+<li>fill(): 通过填充路径的内容区域生成实心的图形。</li>
+</ul>
+</li>
+</ul>
+<p><strong> 注意 </strong><br>closePath()这个方法会通过绘制一条从当前点到开始点的直线来闭合图形。如果图形是已经闭合了的，即当前点为开始点，该函数什么也不做<br>当你调用fill()函数时，所有没有闭合的形状都会自动闭合，所以你不需要调用closePath()函数。但是调用stroke()时不会自动闭合。</p>
+<h3 id="绘制三角形"><a href="#绘制三角形" class="headerlink" title="绘制三角形"></a>绘制三角形</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>)</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">	<span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">	<span class="hljs-comment">// 填充三角形</span></span><br><span class="line">	<span class="hljs-comment">// ctx.beginPath()</span></span><br><span class="line">    <span class="hljs-comment">// ctx.moveTo(75, 50)</span></span><br><span class="line">    <span class="hljs-comment">// ctx.lineTo(100, 75)</span></span><br><span class="line">    <span class="hljs-comment">// ctx.lineTo(100, 25)</span></span><br><span class="line">    <span class="hljs-comment">// ctx.fill()</span></span><br><span class="line">    <span class="hljs-comment">// 描边三角形</span></span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.moveTo(<span class="hljs-number">125</span>, <span class="hljs-number">125</span>);</span><br><span class="line">    ctx.lineTo(<span class="hljs-number">125</span>, <span class="hljs-number">45</span>);</span><br><span class="line">    ctx.lineTo(<span class="hljs-number">45</span>, <span class="hljs-number">125</span>);</span><br><span class="line">    ctx.closePath();</span><br><span class="line">    ctx.stroke();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="绘制梯形"><a href="#绘制梯形" class="headerlink" title="绘制梯形"></a>绘制梯形</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">	ctx.moveTo(<span class="hljs-number">35</span>, <span class="hljs-number">25</span>);</span><br><span class="line">	ctx.lineTo(<span class="hljs-number">125</span>, <span class="hljs-number">25</span>);</span><br><span class="line">	ctx.lineTo(<span class="hljs-number">155</span>, <span class="hljs-number">75</span>);</span><br><span class="line">	ctx.lineTo(<span class="hljs-number">5</span>, <span class="hljs-number">75</span>);</span><br><span class="line">	ctx.lineTo(<span class="hljs-number">35</span>, <span class="hljs-number">25</span>);</span><br><span class="line">	ctx.stroke();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="绘制笑脸"><a href="#绘制笑脸" class="headerlink" title="绘制笑脸"></a>绘制笑脸</h3><p>绘制圆弧或者圆的时候，我们可以使用如下方法：</p>
+<ul>
+<li>arc(x, y, radius, startAngle, endAngle, anticlockwise) 画一个以（x,y）为圆心的以radius为半径的圆弧（圆），从startAngle开始到endAngle结束，按照anticlockwise给定的方向（默认为顺时针）来生成。</li>
+<li>arcTo(x1, y1, x2, y2, radius) 根据给定的控制点和半径画一段圆弧，再以直线连接两个控制点。</li>
+<li>anticlockwise为true则表示逆时针绘制。</li>
+</ul>
+<p><strong> 注意 </strong> arc()函数中表示角的单位是弧度，不是角度。角度与弧度的js表达式: </p>
+<p>弧度=(Math.PI/180)*角度。</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.arc(<span class="hljs-number">75</span>, <span class="hljs-number">75</span>, <span class="hljs-number">50</span>, <span class="hljs-number">0</span>, <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">2</span>, <span class="hljs-literal">true</span>); <span class="hljs-comment">// 绘制</span></span><br><span class="line">    ctx.moveTo(<span class="hljs-number">110</span>, <span class="hljs-number">75</span>);</span><br><span class="line">    ctx.arc(<span class="hljs-number">75</span>, <span class="hljs-number">75</span>, <span class="hljs-number">35</span>, <span class="hljs-number">0</span>, <span class="hljs-built_in">Math</span>.PI, <span class="hljs-literal">false</span>);   <span class="hljs-comment">// 口(顺时针)</span></span><br><span class="line">    ctx.moveTo(<span class="hljs-number">65</span>, <span class="hljs-number">65</span>);</span><br><span class="line">    ctx.arc(<span class="hljs-number">60</span>, <span class="hljs-number">65</span>, <span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">2</span>, <span class="hljs-literal">true</span>);  <span class="hljs-comment">// 左眼</span></span><br><span class="line">    ctx.moveTo(<span class="hljs-number">95</span>, <span class="hljs-number">65</span>);</span><br><span class="line">    ctx.arc(<span class="hljs-number">90</span>, <span class="hljs-number">65</span>, <span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">2</span>, <span class="hljs-literal">true</span>);  <span class="hljs-comment">// 右眼</span></span><br><span class="line">    ctx.stroke();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二次贝塞尔曲线及三次贝塞尔曲线"><a href="#二次贝塞尔曲线及三次贝塞尔曲线" class="headerlink" title="二次贝塞尔曲线及三次贝塞尔曲线"></a>二次贝塞尔曲线及三次贝塞尔曲线</h3><p>下一个十分有用的路径类型就是贝塞尔曲线。二次及三次贝塞尔曲线都十分有用，一般用来绘制复杂有规律的图形</p>
+<ul>
+<li>quadraticCurveTo(cp1x, cp1y, x, y) 绘制二次贝塞尔曲线，cp1x,cp1y为一个控制点，x,y为结束点。</li>
+<li>bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y) 绘制三次贝塞尔曲线，cp1x,cp1y为控制点一，cp2x,cp2y为控制点二，x,y为结束点。</li>
+</ul>
+<p>下面的图示能够很好的描述两者的关系，二次贝塞尔曲线有一个开始点（蓝色）、一个结束点（蓝色）以及一个控制点（红色），而三次贝塞尔曲线有两个控制点</p>
+<p><img src="/images/canvas_curves.png" alt></p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">	<span class="hljs-comment">// 绘制二次贝塞尔曲线  渲染对话气泡</span></span><br><span class="line">   	ctx.beginPath()</span><br><span class="line">   	ctx.moveTo(<span class="hljs-number">75</span>, <span class="hljs-number">25</span>)</span><br><span class="line">   	ctx.quadraticCurveTo(<span class="hljs-number">25</span>, <span class="hljs-number">25</span>, <span class="hljs-number">25</span>, <span class="hljs-number">75</span>)</span><br><span class="line">   	ctx.quadraticCurveTo(<span class="hljs-number">25</span>, <span class="hljs-number">125</span>, <span class="hljs-number">75</span>, <span class="hljs-number">125</span>)</span><br><span class="line">   	ctx.quadraticCurveTo(<span class="hljs-number">50</span>, <span class="hljs-number">140</span>, <span class="hljs-number">40</span>, <span class="hljs-number">135</span>)</span><br><span class="line">   	ctx.quadraticCurveTo(<span class="hljs-number">60</span>, <span class="hljs-number">140</span>, <span class="hljs-number">90</span>, <span class="hljs-number">125</span>)</span><br><span class="line">   	ctx.quadraticCurveTo(<span class="hljs-number">90</span>, <span class="hljs-number">125</span>, <span class="hljs-number">170</span>, <span class="hljs-number">125</span>)</span><br><span class="line">   	ctx.quadraticCurveTo(<span class="hljs-number">220</span>, <span class="hljs-number">125</span>, <span class="hljs-number">220</span>, <span class="hljs-number">75</span>)</span><br><span class="line">   	ctx.quadraticCurveTo(<span class="hljs-number">220</span>, <span class="hljs-number">25</span>, <span class="hljs-number">170</span>, <span class="hljs-number">25</span>)</span><br><span class="line">   	ctx.quadraticCurveTo(<span class="hljs-number">170</span>, <span class="hljs-number">25</span>, <span class="hljs-number">75</span>, <span class="hljs-number">25</span>)</span><br><span class="line">   	ctx.stroke()</span><br><span class="line">   	<span class="hljs-comment">// 绘制二次贝塞尔曲线 渲染对话气泡</span></span><br><span class="line">   	<span class="hljs-comment">// ctx.beginPath();</span></span><br><span class="line">    <span class="hljs-comment">// ctx.moveTo(75, 25);</span></span><br><span class="line">    <span class="hljs-comment">// ctx.quadraticCurveTo(25, 25, 25, 62.5);</span></span><br><span class="line">    <span class="hljs-comment">// ctx.quadraticCurveTo(25, 100, 50, 100);</span></span><br><span class="line">    <span class="hljs-comment">// ctx.quadraticCurveTo(50, 120, 30, 125);</span></span><br><span class="line">    <span class="hljs-comment">// ctx.quadraticCurveTo(60, 120, 65, 100);</span></span><br><span class="line">    <span class="hljs-comment">// ctx.quadraticCurveTo(125, 100, 125, 62.5);</span></span><br><span class="line">    <span class="hljs-comment">// ctx.quadraticCurveTo(125, 25, 75, 25);</span></span><br><span class="line">    <span class="hljs-comment">// ctx.stroke();</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="线性相关的属性"><a href="#线性相关的属性" class="headerlink" title="线性相关的属性"></a>线性相关的属性</h3><ul>
+<li>lineWidth：设置线宽</li>
+<li>strokeStyle：设置线条颜色，值可以为 16进制、颜色字符串、rgb、rgba、渐变色</li>
+<li>fillStyle：设置填充颜色</li>
+<li>lineCap：设置线段两端的样式<ul>
+<li>butt：默认</li>
+<li>round：设置线段两端为突出的圆角图形</li>
+<li>square：设置线段两端为突出的方形图形</li>
+</ul>
+</li>
+<li>lineJoin：设置线段相交点的样式<ul>
+<li>round：圆角样式</li>
+<li>bevel：平角样式</li>
+<li>miter：尖角样式</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 绘制颜色</span></span><br><span class="line">	<span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line">	<span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">	    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">	    <span class="hljs-comment">// fillStyle: 绘制颜色</span></span><br><span class="line">		<span class="hljs-comment">// ctx.fillStyle = '#FD0';</span></span><br><span class="line">		<span class="hljs-comment">// ctx.fillRect(0,0,75,75);</span></span><br><span class="line">		<span class="hljs-comment">// ctx.fillStyle = '#6C0';</span></span><br><span class="line">		<span class="hljs-comment">// ctx.fillRect(75,0,75,75);</span></span><br><span class="line">		<span class="hljs-comment">// ctx.fillStyle = '#09F';</span></span><br><span class="line">		<span class="hljs-comment">// ctx.fillRect(0,75,75,75);</span></span><br><span class="line">		<span class="hljs-comment">// ctx.fillStyle = '#F30';</span></span><br><span class="line">		<span class="hljs-comment">// ctx.fillRect(75,75,75,75);</span></span><br><span class="line">		<span class="hljs-comment">// ctx.fillStyle = '#FFF';</span></span><br><span class="line">		<span class="hljs-comment">// 设置透明度值</span></span><br><span class="line">		<span class="hljs-comment">// ctx.globalAlpha = 0.2;</span></span><br><span class="line">		<span class="hljs-comment">// 画半透明圆</span></span><br><span class="line">		<span class="hljs-comment">// for (var i=0;i&lt;7;i++)&#123;</span></span><br><span class="line">		<span class="hljs-comment">//     ctx.beginPath();</span></span><br><span class="line">		<span class="hljs-comment">//     ctx.arc(75,75,10+10*i,0,Math.PI*2,true);</span></span><br><span class="line">		<span class="hljs-comment">//     ctx.fill();</span></span><br><span class="line">		<span class="hljs-comment">// &#125;</span></span><br><span class="line">		<span class="hljs-comment">// lineJoin: 线两端设置样式</span></span><br><span class="line">		ctx.lineWidth = <span class="hljs-number">15</span>;</span><br><span class="line">		ctx.lineJoin = <span class="hljs-string">'miter'</span>;</span><br><span class="line">		ctx.beginPath();</span><br><span class="line">		ctx.moveTo(<span class="hljs-number">20</span>,<span class="hljs-number">20</span>);</span><br><span class="line">		ctx.lineTo(<span class="hljs-number">100</span>,<span class="hljs-number">50</span>);</span><br><span class="line">		ctx.lineTo(<span class="hljs-number">20</span>,<span class="hljs-number">100</span>);</span><br><span class="line">		ctx.stroke();</span><br><span class="line">	&#125;</span><br><span class="line"><span class="hljs-comment">// 绘制破浪</span></span><br><span class="line">	<span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line">	<span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">	    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">	    <span class="hljs-keyword">var</span> lineJoin = [<span class="hljs-string">'round'</span>, <span class="hljs-string">'bevel'</span>, <span class="hljs-string">'miter'</span>];</span><br><span class="line">		ctx.lineWidth = <span class="hljs-number">10</span>;</span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; lineJoin.length; i++) &#123;</span><br><span class="line">		    ctx.lineJoin = lineJoin[i];</span><br><span class="line">		    ctx.beginPath();</span><br><span class="line">		    ctx.moveTo(<span class="hljs-number">-5</span>, <span class="hljs-number">5</span> + i * <span class="hljs-number">40</span>);</span><br><span class="line">		    ctx.lineTo(<span class="hljs-number">35</span>, <span class="hljs-number">45</span> + i * <span class="hljs-number">40</span>);</span><br><span class="line">		    ctx.lineTo(<span class="hljs-number">75</span>, <span class="hljs-number">5</span> + i * <span class="hljs-number">40</span>);</span><br><span class="line">		    ctx.lineTo(<span class="hljs-number">115</span>, <span class="hljs-number">45</span> + i * <span class="hljs-number">40</span>);</span><br><span class="line">		    ctx.lineTo(<span class="hljs-number">155</span>, <span class="hljs-number">5</span> + i * <span class="hljs-number">40</span>);</span><br><span class="line">		    ctx.stroke();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/bolang.png" alt></p>
+<h3 id="绘制阴影效果"><a href="#绘制阴影效果" class="headerlink" title="绘制阴影效果"></a>绘制阴影效果</h3><p>属性：</p>
+<ul>
+<li>shadowOffsetX: 设置阴影在 X 延伸距离，不受变换矩阵所影响，负值表示阴影会往上或左延伸，正值则表示会往下或右延伸，默认 0 </li>
+<li>shadowOffsetY: 设置阴影在 Y 轴的延伸距离，不受变换矩阵所影响，负值表示阴影会往上或左延伸，正值则表示会往下或右延伸，默认 0</li>
+<li>shadowBlur: 设置阴影的模糊程度，其数值并不跟像素数量挂钩，也不受变换矩阵的影响，默认为 0</li>
+<li>shadowColor: 标准的 CSS 颜色值，用于设定阴影颜色效果，默认是全透明的黑色</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">    ctx.shadowColor = <span class="hljs-string">"#545454"</span>;</span><br><span class="line">	ctx.shadowOffsetX = <span class="hljs-number">2</span>;</span><br><span class="line">	ctx.shadowOffsetY = <span class="hljs-number">5</span>;</span><br><span class="line">	ctx.shadowBlur = <span class="hljs-number">2</span>;</span><br><span class="line">	ctx.beginPath();</span><br><span class="line">	ctx.moveTo(<span class="hljs-number">20</span>,<span class="hljs-number">20</span>);</span><br><span class="line">	ctx.lineTo(<span class="hljs-number">100</span>,<span class="hljs-number">50</span>);</span><br><span class="line">	ctx.lineTo(<span class="hljs-number">20</span>,<span class="hljs-number">100</span>);</span><br><span class="line">	ctx.stroke();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="绘制立体圆圈"><a href="#绘制立体圆圈" class="headerlink" title="绘制立体圆圈"></a>绘制立体圆圈</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">    ctx.fillStyle = <span class="hljs-string">"#FFF"</span>;</span><br><span class="line">	ctx.fillRect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">400</span>,<span class="hljs-number">300</span>);</span><br><span class="line"></span><br><span class="line">	ctx.shadowColor = <span class="hljs-string">"#545454"</span>;</span><br><span class="line">	ctx.shadowOffsetX = <span class="hljs-number">5</span>;</span><br><span class="line">	ctx.shadowOffsetY = <span class="hljs-number">5</span>;</span><br><span class="line">	ctx.shadowBlur = <span class="hljs-number">2</span>;</span><br><span class="line"></span><br><span class="line">	ctx.arc(<span class="hljs-number">200</span>, <span class="hljs-number">150</span>, <span class="hljs-number">200</span>, <span class="hljs-number">0</span>, <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">2</span> ,<span class="hljs-literal">false</span>);</span><br><span class="line">	ctx.arc(<span class="hljs-number">200</span>, <span class="hljs-number">150</span>, <span class="hljs-number">115</span>, <span class="hljs-number">0</span>, <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">2</span> ,<span class="hljs-literal">true</span>);</span><br><span class="line">	ctx.fillStyle = <span class="hljs-string">"#00AAAA"</span>;</span><br><span class="line">	ctx.fill();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/circle-icon.png" alt></p>
+<h3 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h3><p>canvas 提供了两种方法来渲染文本:</p>
+<ul>
+<li>fillText(text, x, y [, maxWidth]) 在指定的(x,y)位置填充指定的文本，绘制的最大宽度是可选的.</li>
+<li>strokeText(text, x, y [, maxWidth]) 在指定的(x,y)位置绘制文本边框，绘制的最大宽度是可选的.</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">    ctx.font = <span class="hljs-string">"48px serif"</span>;</span><br><span class="line">    ctx.textAlign = <span class="hljs-string">'center'</span>;</span><br><span class="line">	<span class="hljs-comment">// ctx.fillText("Hello world", 10, 50);</span></span><br><span class="line">	ctx.strokeText(<span class="hljs-string">"Hello world"</span>, <span class="hljs-number">10</span>, <span class="hljs-number">50</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有样式的文本:</p>
+<ul>
+<li>font = value 当前我们用来绘制文本的样式. 这个字符串使用和 CSS font 属性相同的语法. 默认的字体是 10px sans-serif。</li>
+<li>textAlign = value 文本对齐选项. 可选的值包括：start, end, left, right or center. 默认值是 start。</li>
+<li>textBaseline = value 基线对齐选项. 可选的值包括：top, hanging, middle, alphabetic, ideographic, bottom。默认值是 alphabetic。</li>
+<li>direction = value 文本方向。可能的值包括：ltr, rtl, inherit。默认值是 inherit。</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">    ctx.font = <span class="hljs-string">"40px sans-serif"</span>;</span><br><span class="line">	ctx.textAlign = <span class="hljs-string">'left'</span></span><br><span class="line">	ctx.textBaseline = <span class="hljs-string">"hanging"</span>;</span><br><span class="line">	ctx.direction = <span class="hljs-string">'inherit'</span>;</span><br><span class="line">	<span class="hljs-comment">// ctx.fillText("Hello world", 10, 50);</span></span><br><span class="line">	ctx.strokeText(<span class="hljs-string">"Hello world"</span>, <span class="hljs-number">10</span>, <span class="hljs-number">50</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当你需要获得更多的文本细节时，下面的方法可以给你测量文本的方法。</p>
+<ul>
+<li>measureText() 将返回一个 TextMetrics对象的宽度、所在像素，这些体现文本特性的属性。</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">    ctx.font = <span class="hljs-string">"40px sans-serif"</span>;</span><br><span class="line">	<span class="hljs-comment">// ctx.fillText("Hello world", 10, 50);</span></span><br><span class="line">	ctx.strokeText(<span class="hljs-string">"Hello world"</span>, <span class="hljs-number">10</span>, <span class="hljs-number">50</span>);</span><br><span class="line">	<span class="hljs-keyword">var</span> text = ctx.measureText(<span class="hljs-string">"foo"</span>); <span class="hljs-comment">// TextMetrics object</span></span><br><span class="line">	<span class="hljs-built_in">console</span>.log(text.width) <span class="hljs-comment">// 16;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h3><p>我们用下面的方法新建一个 canvasGradient 对象，并且赋给图形的 fillStyle 或 strokeStyle 属性</p>
+<ul>
+<li>createLinearGradient(x1, y1, x2, y2): createLinearGradient 方法接受 4 个参数，表示渐变的起点 (x1,y1) 与终点 (x2,y2)。</li>
+<li>createRadialGradient(x1, y1, r1, x2, y2, r2): createRadialGradient 方法接受 6 个参数，前三个定义一个以 (x1,y1) 为原点，半径为 r1 的圆，后三个参数则定义另一个以 (x2,y2) 为原点，半径为 r2 的圆。</li>
+</ul>
+<p>创建出 canvasGradient 对象后，我们就可以用 addColorStop 方法给它上色了</p>
+<ul>
+<li>gradient.addColorStop(position, color): 2 个参数，position 参数必须是一个 0.0 与 1.0 之间的数值，表示渐变中颜色所在的相对位置。例如，0.5 表示颜色会出现在正中间。color 参数必须是一个有效的 CSS 颜色值（如 #FFF， rgba(0,0,0,1)，等等）</li>
+</ul>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> radgrad = ctx.createRadialGradient(<span class="hljs-number">45</span>,<span class="hljs-number">45</span>,<span class="hljs-number">10</span>,<span class="hljs-number">52</span>,<span class="hljs-number">50</span>,<span class="hljs-number">30</span>);</span><br><span class="line">		radgrad.addColorStop(<span class="hljs-number">0</span>, <span class="hljs-string">'#A7D30C'</span>);</span><br><span class="line">		radgrad.addColorStop(<span class="hljs-number">0.9</span>, <span class="hljs-string">'#019F62'</span>);</span><br><span class="line">		radgrad.addColorStop(<span class="hljs-number">1</span>, <span class="hljs-string">'rgba(1,159,98,0)'</span>);</span><br><span class="line">  		ctx.fillStyle = radgrad;</span><br><span class="line">  		ctx.fillRect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">150</span>,<span class="hljs-number">150</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="使用图片"><a href="#使用图片" class="headerlink" title="使用图片"></a>使用图片</h3><p>引入图像到canvas里需要以下两步基本操作：</p>
+<ul>
+<li>获得一个指向<code>HTMLImageElement</code>的对象或者另一个<code>canvas</code>元素的引用作为源，也可以通过提供一个URL的方式来使用图片</li>
+<li>使用<code>drawImage()</code>函数将图片绘制到画布上</li>
+</ul>
+<p>canvas的API可以使用下面这些类型中的一种作为图片的源：</p>
+<ul>
+<li><code>HTMLImageElement</code> 这些图片是由<code>Image()</code>函数构造出来的，或者任何的<code>&lt;img&gt;</code>元素。</li>
+<li><code>HTMLVideoElement</code> 用一个HTML的 <code>&lt;video&gt;</code>元素作为你的图片源，可以从视频中抓取当前帧作为一个图像。</li>
+<li><code>HTMLCanvasElement</code> 可以使用另一个 <code>&lt;canvas&gt;</code> 元素作为你的图片源。</li>
+<li><code>ImageBitmap</code> 这是一个高性能的位图，可以低延迟地绘制，它可以从上述的所有源以及其它几种源中生成。</li>
+</ul>
+<p>这些源统一由 <code>CanvasImageSource</code> 类型来引用。</p>
+<h4 id="第一步：获得需要绘制的图片方法-gt"><a href="#第一步：获得需要绘制的图片方法-gt" class="headerlink" title="第一步：获得需要绘制的图片方法-&gt;"></a>第一步：获得需要绘制的图片方法-&gt;</h4><ol>
+<li>我们可以通过下列方法的一种来获得与canvas相同页面内的图片的引用：</li>
+</ol>
+<ul>
+<li>document.images集合</li>
+<li>document.getElementsByTagName()方法<br>如果你知道你想使用的指定图片的ID，你可以用document.getElementById()获得这个图片</li>
+</ul>
+<ol start="2">
+<li>使用其它域名下的图片: 在 <code>HTMLImageElement</code> 上使用<code>crossOrigin</code>属性，你可以请求加载其它域名上的图片。如果图片的服务器允许跨域访问这个图片，那么你可以使用这个图片而不污染<code>canvas</code>，否则，使用这个图片将会污染<code>canvas</code></li>
+<li>使用其它 canvas 元素: 和引用页面内的图片类似地，用 document.getElementsByTagName 或 document.getElementById 方法来获取其它 canvas 元素。但你引入的应该是已经准备好的 canvas。</li>
+<li>由零开始创建图像: 或者我们可以用脚本创建一个新的 <code>HTMLImageElement</code> 对象。要实现这个方法，我们可以使用很方便的<code>Image()</code>构造函数。<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> img = <span class="hljs-keyword">new</span> Image();   <span class="hljs-comment">// 创建一个&lt;img&gt;元素</span></span><br><span class="line">img.src = <span class="hljs-string">'myImage.png'</span>; <span class="hljs-comment">// 设置图片源地址</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>当脚本执行后，图片开始装载。<br>若调用 drawImage 时，图片没装载完，那什么都不会发生（在一些旧的浏览器中可能会抛出异常）。因此你应该用load事件来保证不会在加载完毕之前使用这个图片：<br><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> img = <span class="hljs-keyword">new</span> Image();   <span class="hljs-comment">// 创建img元素</span></span><br><span class="line">img.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">  <span class="hljs-comment">// 执行drawImage语句</span></span><br><span class="line">&#125;</span><br><span class="line">img.src = <span class="hljs-string">'myImage.png'</span>; <span class="hljs-comment">// 设置图片源地址</span></span><br><span class="line"><span class="hljs-comment">// 如果你只用到一张图片的话，这已经够了</span></span><br></pre></td></tr></table></figure></p>
+<ol start="5">
+<li><p>通过 data: url 方式嵌入图像</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img.src = <span class="hljs-string">'data:image/gif;base64,R0lGODlhCwALAIAAAAAA3pn/ZiH5BAEAAAEALAAAAAALAAsAAAIUhA+hkcuO4lmNVindo7qyrIXiGBYAOw=='</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用视频帧: 你还可以使用<video> 中的视频帧（即便视频是不可见的）。例如，如果你有一个ID为“myvideo”的<video> 元素，你可以这样做：</video></video></p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getMyVideo</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvas'</span>);</span><br><span class="line">  <span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'myvideo'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// 它将为这个视频返回HTMLVideoElement对象，正如我们前面提到的，它可以作为我们的Canvas图片源</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="第二步：绘制图片-gt"><a href="#第二步：绘制图片-gt" class="headerlink" title="第二步：绘制图片-&gt;"></a>第二步：绘制图片-&gt;</h4><p>一旦获得了源图对象，我们就可以使用 drawImage 方法将它渲染到 canvas 里。drawImage 方法有三种形态，下面是最基础的一种。</p>
+<ul>
+<li>drawImage(image, x, y)<br>其中 image 是 image 或者 canvas 对象，x 和 y 是其在目标 canvas 里的起始坐标。</li>
+<li>drawImage(image, x, y, width, height)<br>这个方法多了2个参数：width 和 height，这两个参数用来控制 当向canvas画入时应该缩放的大小</li>
+<li>drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)<br>参数参照下面的图解，前4个是定义图像源的切片位置和大小，后4个则是定义切片的目标显示位置和大小。<br><img src="/images/drawImg-slicing.png" alt></li>
+</ul>
+<h3 id="利用drawImage的切片功能"><a href="#利用drawImage的切片功能" class="headerlink" title="利用drawImage的切片功能"></a>利用drawImage的切片功能</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">    <span class="hljs-keyword">var</span> img = <span class="hljs-keyword">new</span> Image();</span><br><span class="line">	img.onload = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;</span><br><span class="line">	    <span class="hljs-comment">// 绘制的原图片 切片前</span></span><br><span class="line">		ctx.drawImage(img,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);</span><br><span class="line">		<span class="hljs-comment">// 绘制切片后</span></span><br><span class="line">		ctx.drawImage(img,<span class="hljs-number">33</span>,<span class="hljs-number">71</span>,<span class="hljs-number">104</span>,<span class="hljs-number">124</span>,<span class="hljs-number">300</span>,<span class="hljs-number">80</span>,<span class="hljs-number">100</span>,<span class="hljs-number">104</span>);</span><br><span class="line">	&#125;;</span><br><span class="line">	img.src = <span class="hljs-string">'https://mdn.mozillademos.org/files/5397/rhino.jpg'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果如下：<br><img src="/images/slice-img.png" alt></p>
+<h3 id="平铺图像"><a href="#平铺图像" class="headerlink" title="平铺图像"></a>平铺图像</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">    <span class="hljs-comment">// 第一步：由零开始创建图像</span></span><br><span class="line">    <span class="hljs-keyword">var</span> img = <span class="hljs-keyword">new</span> Image();</span><br><span class="line">	img.onload = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;</span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">4</span>;i++)&#123;</span><br><span class="line">			<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j=<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">3</span>;j++)&#123;</span><br><span class="line">			    <span class="hljs-comment">// 第二步：获取到图片源img，drawImage 绘制图片</span></span><br><span class="line">				ctx.drawImage(img,j*<span class="hljs-number">50</span>,i*<span class="hljs-number">38</span>,<span class="hljs-number">50</span>,<span class="hljs-number">38</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	img.src = <span class="hljs-string">'https://mdn.mozillademos.org/files/5397/rhino.jpg'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>平铺3行4列效果如下：</p>
+<p><img src="/images/tile-picture.png" alt></p>
+<h3 id="控制图像的缩放行为"><a href="#控制图像的缩放行为" class="headerlink" title="控制图像的缩放行为"></a>控制图像的缩放行为</h3><p>Gecko 1.9.2 引入了 mozImageSmoothingEnabled 属性，值为 false 时，图像不会平滑地缩放。默认是 true 。<br><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cx.mozImageSmoothingEnabled = <span class="hljs-literal">false</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="canvas变形"><a href="#canvas变形" class="headerlink" title="canvas变形"></a>canvas变形</h3><h4 id="状态的保存和恢复"><a href="#状态的保存和恢复" class="headerlink" title="状态的保存和恢复"></a>状态的保存和恢复</h4><p>在下面学习变形之前，先介绍两个在开始绘制复杂图形时必不可少的方法:</p>
+<ul>
+<li>save() 保存画布(canvas)的所有状态</li>
+<li>restore() save 和 restore 方法是用来保存和恢复 canvas 状态的，都没有参数。Canvas 的状态就是当前画面应用的所有样式和变形的一个快照。</li>
+</ul>
+<p>Canvas状态存储在栈中，每当 save() 方法被调用后，当前的状态就被推送到栈中保存<br>你可以调用任意多次 save 方法。每一次调用 restore 方法，上一个保存的状态就从栈中弹出，所有设定都恢复。</p>
+<h4 id="连续矩形绘制"><a href="#连续矩形绘制" class="headerlink" title="连续矩形绘制"></a>连续矩形绘制</h4><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">    ctx.fillRect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">150</span>,<span class="hljs-number">150</span>);   <span class="hljs-comment">// 使用默认设置绘制一个矩形</span></span><br><span class="line">	ctx.save();                  <span class="hljs-comment">// 保存默认颜色状态1</span></span><br><span class="line"></span><br><span class="line">	ctx.fillStyle = <span class="hljs-string">'#09F'</span>       <span class="hljs-comment">// 在原有配置基础上对颜色做改变</span></span><br><span class="line">	ctx.fillRect(<span class="hljs-number">15</span>,<span class="hljs-number">15</span>,<span class="hljs-number">120</span>,<span class="hljs-number">120</span>); <span class="hljs-comment">// 使用新的设置绘制一个矩形</span></span><br><span class="line">	ctx.save();                  <span class="hljs-comment">// 保存当前颜色状态2</span></span><br><span class="line"></span><br><span class="line">	ctx.fillStyle = <span class="hljs-string">'#FFF'</span>       <span class="hljs-comment">// 再次改变颜色配置</span></span><br><span class="line">	ctx.globalAlpha = <span class="hljs-number">0.5</span>;</span><br><span class="line">	ctx.fillRect(<span class="hljs-number">30</span>,<span class="hljs-number">30</span>,<span class="hljs-number">90</span>,<span class="hljs-number">90</span>);   <span class="hljs-comment">// 使用新的配置绘制一个矩形</span></span><br><span class="line"></span><br><span class="line">	ctx.restore();               <span class="hljs-comment">// 重新加载之前的颜色状态2</span></span><br><span class="line">	ctx.fillRect(<span class="hljs-number">45</span>,<span class="hljs-number">45</span>,<span class="hljs-number">60</span>,<span class="hljs-number">60</span>);   <span class="hljs-comment">// 使用上一次的配置绘制一个矩形</span></span><br><span class="line"></span><br><span class="line">	ctx.restore();               <span class="hljs-comment">// 重新加载默认颜色状态1</span></span><br><span class="line">	ctx.fillRect(<span class="hljs-number">60</span>,<span class="hljs-number">60</span>,<span class="hljs-number">30</span>,<span class="hljs-number">30</span>);   <span class="hljs-comment">// 使用加载的配置绘制一个矩形</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="移动-Translating"><a href="#移动-Translating" class="headerlink" title="移动 Translating"></a>移动 Translating</h3><ul>
+<li>translate(x, y): 它用来移动 canvas 和它的原点到一个不同的位置; x 是左右偏移量，y 是上下偏移量，如下图所示。<br><img src="/images/canvas-translate.png" alt></li>
+</ul>
+<p>这个例子显示了一些移动 canvas 原点的好处。如果不使用 translate 方法，那么所有矩形都将被绘制在相同的位置（0,0）。translate 方法同时让我们可以任意放置这些图案，而不需要在 fillRect() 方法中手工调整坐标值，既好理解也方便使用。</p>
+<p>我在 draw 方法中调用 fillRect() 方法 9 次，用了 2 层循环。每一次循环，先移动 canvas ，画螺旋图案，然后恢复到原始状态</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"> 	<span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line"> 	    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line"> 	    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) &#123;</span><br><span class="line">           <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">3</span>; j++) &#123;</span><br><span class="line">               <span class="hljs-comment">// 在做变形之前先保存状态是一个良好的习惯</span></span><br><span class="line">               ctx.save();</span><br><span class="line">               ctx.fillStyle = <span class="hljs-string">'rgb('</span> + (<span class="hljs-number">51</span> * i) + <span class="hljs-string">', '</span> + (<span class="hljs-number">255</span> - <span class="hljs-number">51</span> * i) + <span class="hljs-string">', 255)'</span>;</span><br><span class="line">               ctx.translate(<span class="hljs-number">10</span> + j * <span class="hljs-number">50</span>, <span class="hljs-number">10</span> + i * <span class="hljs-number">50</span>);</span><br><span class="line">               ctx.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">25</span>, <span class="hljs-number">25</span>);</span><br><span class="line">               ctx.restore();</span><br><span class="line">           &#125;</span><br><span class="line">         &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="旋转-Rotating"><a href="#旋转-Rotating" class="headerlink" title="旋转 Rotating"></a>旋转 Rotating</h3><p>第二个介绍 rotate 方法，它用于以原点为中心旋转 canvas。</p>
+<ul>
+<li>rotate(angle) 这个方法只接受一个参数：旋转的角度(angle)，它是顺时针方向的，以弧度为单位的值。<br>旋转的中心点始终是 canvas 的原点，如果要改变它，我们需要用到 translate 方法。</li>
+</ul>
+<p>通过例子了解一下：<br>这里我们又用到了两层循环。第一层循环决定环的数量，第二层循环决定每环有多少个点。每环开始之前，我都保存一下 canvas 的状态，这样恢复起来方便。每次画圆点，我都以一定夹角来旋转 canvas，而这个夹角则是由环上的圆点数目的决定的。最里层的环有 6 个圆点，这样，每次旋转的夹角就是 360/6 = 60 度。往外每一环的圆点数目是里面一环的 2 倍，那么每次旋转的夹角随之减半<br><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">    ctx.translate(<span class="hljs-number">75</span>,<span class="hljs-number">75</span>);</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">1</span>;i&lt;<span class="hljs-number">6</span>;i++)&#123; <span class="hljs-comment">// Loop through rings (from inside to out)</span></span><br><span class="line">		ctx.save();</span><br><span class="line">		ctx.fillStyle = <span class="hljs-string">'rgb('</span>+(<span class="hljs-number">51</span>*i)+<span class="hljs-string">','</span>+(<span class="hljs-number">255</span><span class="hljs-number">-51</span>*i)+<span class="hljs-string">',255)'</span>;</span><br><span class="line">	</span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j=<span class="hljs-number">0</span>;j&lt;i*<span class="hljs-number">6</span>;j++)&#123; <span class="hljs-comment">// draw individual dots</span></span><br><span class="line">		  ctx.rotate(<span class="hljs-built_in">Math</span>.PI*<span class="hljs-number">2</span>/(i*<span class="hljs-number">6</span>));</span><br><span class="line">		  ctx.beginPath();</span><br><span class="line">		  ctx.arc(<span class="hljs-number">0</span>,i*<span class="hljs-number">12.5</span>,<span class="hljs-number">5</span>,<span class="hljs-number">0</span>,<span class="hljs-built_in">Math</span>.PI*<span class="hljs-number">2</span>,<span class="hljs-literal">true</span>);</span><br><span class="line">		  ctx.fill();</span><br><span class="line">		&#125;</span><br><span class="line">		ctx.restore();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="缩放-Scaling"><a href="#缩放-Scaling" class="headerlink" title="缩放 Scaling"></a>缩放 Scaling</h3><p>接着是缩放。我们用它来增uni-app减图形在 canvas 中的像素数目，对形状，位图进行缩小或者放大。</p>
+<ul>
+<li>scale(x, y) 可以缩放画布的水平和垂直的单位。两个参数都是实数，可以为负数，x 为水平缩放因子，y 为垂直缩放因子，如果比1小，会比缩放图形， 如果比1大会放大图形。默认值为1， 为实际大小。</li>
+</ul>
+<p>画布初始情况下， 是以左上角坐标为原点的第一象限。如果参数为负实数， 相当于以x 或 y轴作为对称轴镜像反转（例如， 使用translate(0,canvas.height); scale(1,-1); 以y轴作为对称轴镜像反转， 就可得到著名的笛卡尔坐标系，左下角为原点）。</p>
+<p>默认情况下，canvas 的 1 个单位为 1 个像素。举例说，如果我们设置缩放因子是 0.5，1 个单位就变成对应 0.5 个像素，这样绘制出来的形状就会是原先的一半。同理，设置为 2.0 时，1 个单位就对应变成了 2 像素，绘制的结果就是图形放大了 2 倍</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line"><span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">    ctx.save();</span><br><span class="line">    ctx.scale(<span class="hljs-number">10</span>, <span class="hljs-number">3</span>);</span><br><span class="line">    ctx.fillRect(<span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>);</span><br><span class="line">    ctx.restore();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// mirror horizontally</span></span><br><span class="line">    ctx.scale(<span class="hljs-number">-1</span>, <span class="hljs-number">1</span>);</span><br><span class="line">    ctx.font = <span class="hljs-string">'48px serif'</span>;</span><br><span class="line">    ctx.fillText(<span class="hljs-string">'QILANBEI'</span>, <span class="hljs-number">-180</span>, <span class="hljs-number">120</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/canvas-scaling.png" alt></p>
+<h3 id="变形-Transforms"><a href="#变形-Transforms" class="headerlink" title="变形 Transforms"></a>变形 Transforms</h3><h5 id="状态的保存和恢复-1"><a href="#状态的保存和恢复-1" class="headerlink" title="状态的保存和恢复"></a>状态的保存和恢复</h5><p>在下面学习变形之前，先介绍两个在开始绘制复杂图形时必不可少的方法:<br>• save() 保存画布(canvas)的所有状态<br>• restore() save 和 restore 方法是用来保存和恢复 canvas 状态的，都没有参数。Canvas 的状态就是当前画面应用的所有样式和变形的一个快照。<br>•<br>Canvas状态存储在栈中，每当 save() 方法被调用后，当前的状态就被推送到栈中保存<br>你可以调用任意多次 save 方法。每一次调用 restore 方法，上一个保存的状态就从栈中弹出，所有设定都恢复。</p>
+<p>连续矩形绘制：<br><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line">	<span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">	  <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">	  ctx.fillRect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">150</span>,<span class="hljs-number">150</span>);   <span class="hljs-comment">// 使用默认设置绘制一个矩形</span></span><br><span class="line">	ctx.save();                  <span class="hljs-comment">// 保存默认颜色状态1</span></span><br><span class="line">	</span><br><span class="line">	ctx.fillStyle = <span class="hljs-string">'#09F'</span>       <span class="hljs-comment">// 在原有配置基础上对颜色做改变</span></span><br><span class="line">	ctx.fillRect(<span class="hljs-number">15</span>,<span class="hljs-number">15</span>,<span class="hljs-number">120</span>,<span class="hljs-number">120</span>); <span class="hljs-comment">// 使用新的设置绘制一个矩形</span></span><br><span class="line">	ctx.save();                  <span class="hljs-comment">// 保存当前颜色状态2</span></span><br><span class="line">	</span><br><span class="line">	ctx.fillStyle = <span class="hljs-string">'#FFF'</span>       <span class="hljs-comment">// 再次改变颜色配置</span></span><br><span class="line">	ctx.globalAlpha = <span class="hljs-number">0.5</span>;</span><br><span class="line">	ctx.fillRect(<span class="hljs-number">30</span>,<span class="hljs-number">30</span>,<span class="hljs-number">90</span>,<span class="hljs-number">90</span>);   <span class="hljs-comment">// 使用新的配置绘制一个矩形</span></span><br><span class="line">	</span><br><span class="line">	ctx.restore();               <span class="hljs-comment">// 重新加载之前的颜色状态2</span></span><br><span class="line">	ctx.fillRect(<span class="hljs-number">45</span>,<span class="hljs-number">45</span>,<span class="hljs-number">60</span>,<span class="hljs-number">60</span>);   <span class="hljs-comment">// 使用上一次的配置绘制一个矩形</span></span><br><span class="line">	</span><br><span class="line">	ctx.restore();               <span class="hljs-comment">// 重新加载默认颜色状态1</span></span><br><span class="line">	ctx.fillRect(<span class="hljs-number">60</span>,<span class="hljs-number">60</span>,<span class="hljs-number">30</span>,<span class="hljs-number">30</span>);   <span class="hljs-comment">// 使用加载的配置绘制一个矩形</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如图所示：<br><img src="/images/canvas-rect.png" alt></p>
+<h5 id="移动-Translating-1"><a href="#移动-Translating-1" class="headerlink" title="移动 Translating"></a>移动 Translating</h5><p>translate(x, y): 它用来移动 canvas 和它的原点到一个不同的位置; x 是左右偏移量，y 是上下偏移量，如下图所示:</p>
+<p><img src="/images/canvas-transform-axis.png" alt></p>
+<p>通过例子来了解一下：<br>用draw 方法中调用 fillRect() 方法 9 次，用了 2 层循环。每一次循环，先移动 canvas ，画螺旋图案，然后恢复到原始状态</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">draw</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">var</span> ctx = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvas'</span>).getContext(<span class="hljs-string">'2d'</span>);</span><br><span class="line">  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) &#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">3</span>; j++) &#123;</span><br><span class="line">      ctx.save();</span><br><span class="line">      ctx.fillStyle = <span class="hljs-string">'rgb('</span> + (<span class="hljs-number">51</span> * i) + <span class="hljs-string">', '</span> + (<span class="hljs-number">255</span> - <span class="hljs-number">51</span> * i) + <span class="hljs-string">', 255)'</span>;</span><br><span class="line">      ctx.translate(<span class="hljs-number">10</span> + j * <span class="hljs-number">50</span>, <span class="hljs-number">10</span> + i * <span class="hljs-number">50</span>);</span><br><span class="line">      ctx.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">25</span>, <span class="hljs-number">25</span>);</span><br><span class="line">      ctx.restore();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/canvas-draw-rect.png" alt></p>
+<h5 id="旋转-Rotating-1"><a href="#旋转-Rotating-1" class="headerlink" title="旋转 Rotating"></a>旋转 Rotating</h5><p>第二个介绍 rotate 方法，它用于以原点为中心旋转 canvas。</p>
+<ul>
+<li>rotate(angle) 这个方法只接受一个参数：旋转的角度(angle)，它是顺时针方向的，以弧度为单位的值。<br>旋转的中心点始终是 canvas 的原点，如果要改变它，我们需要用到 translate 方法。</li>
+</ul>
+<p><img src="/images/canvas-rota-axis.png" alt></p>
+<p>通过例子了解一下：<br>这里我们又用到了两层循环。第一层循环决定环的数量，第二层循环决定每环有多少个点。每环开始之前，我都保存一下 canvas 的状态，这样恢复起来方便。每次画圆点，我都以一定夹角来旋转 canvas，而这个夹角则是由环上的圆点数目的决定的。最里层的环有 6 个圆点，这样，每次旋转的夹角就是 360/6 = 60 度。往外每一环的圆点数目是里面一环的 2 倍，那么每次旋转的夹角随之减半</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'canvasId'</span>);</span><br><span class="line">  <span class="hljs-keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">      <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>)</span><br><span class="line">      ctx.translate(<span class="hljs-number">75</span>,<span class="hljs-number">75</span>);</span><br><span class="line">      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">1</span>;i&lt;<span class="hljs-number">6</span>;i++)&#123; <span class="hljs-comment">// Loop through rings (from inside to out)</span></span><br><span class="line">      ctx.save();</span><br><span class="line">      ctx.fillStyle = <span class="hljs-string">'rgb('</span>+(<span class="hljs-number">51</span>*i)+<span class="hljs-string">','</span>+(<span class="hljs-number">255</span><span class="hljs-number">-51</span>*i)+<span class="hljs-string">',255)'</span>;</span><br><span class="line">    </span><br><span class="line">      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j=<span class="hljs-number">0</span>;j&lt;i*<span class="hljs-number">6</span>;j++)&#123; <span class="hljs-comment">// draw individual dots</span></span><br><span class="line">        ctx.rotate(<span class="hljs-built_in">Math</span>.PI*<span class="hljs-number">2</span>/(i*<span class="hljs-number">6</span>));</span><br><span class="line">        ctx.beginPath();</span><br><span class="line">        ctx.arc(<span class="hljs-number">0</span>,i*<span class="hljs-number">12.5</span>,<span class="hljs-number">5</span>,<span class="hljs-number">0</span>,<span class="hljs-built_in">Math</span>.PI*<span class="hljs-number">2</span>,<span class="hljs-literal">true</span>);</span><br><span class="line">        ctx.fill();</span><br><span class="line">      &#125;</span><br><span class="line">      ctx.restore();</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/canvas-rotate-circle.png" alt></p>
+<h3 id="非零环绕原则"><a href="#非零环绕原则" class="headerlink" title="非零环绕原则"></a>非零环绕原则</h3><ul>
+<li>目的：确定某一区域是否需要填充。</li>
+<li>描述：定义计数默认为0，从当前区域选取任意点，然后从该点到整个图形外部绘制一条射线。<br> 观察和这条射线相交的所有线段。<br> 如果该相交的线段是顺时针穿过这条射线，那么 计数 + 1；如果是逆时针穿过，那么计数就 - 1；<br> 如果计数为 0，那么就不填充该区域；<br> 如果计数非 0 ，那么就填充该区域。         </li>
+<li>练习：绘制空心矩形 </li>
+<li>总结：从左到右穿出 或 从上至下 穿出，那么就是顺时针。计数 + 1；否则， 计数 - 1；</li>
+</ul>
+<h3 id="奇-偶原则"><a href="#奇-偶原则" class="headerlink" title="奇-偶原则"></a>奇-偶原则</h3><ul>
+<li>目的：同上</li>
+<li>描述：就看相交线的个数，如果为奇数，就填充；否则就不填充。</li>
+</ul>
+<h3 id="纵向的颜色渐变"><a href="#纵向的颜色渐变" class="headerlink" title="纵向的颜色渐变"></a>纵向的颜色渐变</h3><h3 id="绘制坐标系"><a href="#绘制坐标系" class="headerlink" title="绘制坐标系"></a>绘制坐标系</h3><h3 id="折线图中点的描绘"><a href="#折线图中点的描绘" class="headerlink" title="折线图中点的描绘"></a>折线图中点的描绘</h3><h3 id="用小矩形来描绘点"><a href="#用小矩形来描绘点" class="headerlink" title="用小矩形来描绘点"></a>用小矩形来描绘点</h3>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Canvas学习/">Canvas学习</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Recommendable website</h3>
+        <div class="buttons is-centered">
+            
+                    <a class="button is-info donate" href="https://wangchujiang.com/awesome-mac/" target="_blank">Awesome Mac</a>
+                
+                    <a class="button is-failed donate" href="http://jsdig.com/" target="_blank">前端导航网</a>
+                
+                    <a class="button is-success donate" href="http://www.worldhello.net/gotgit/index.html" target="_blank">Git权威指南</a>
+                
+                    <a class="button is-warning donate" href="https://www.yiibai.com/git" target="_blank">Git教程_中文</a>
+                
+                    <a class="button is-danger donate" href="https://www.zhihu.com/question/28478379" target="_blank">前端逛哪些网站--知乎</a>
+                
+                    <a class="button is-warning donate" href="https://cnodejs.org/topic/56a050ac8392272262331d62" target="_blank">每天一条JS小知识</a>
+                
+                    <a class="button is-primary donate" href="http://www.xuanfengge.com/he-sets-the-front-end-component-library-the-essential-collection.html" target="_blank">前端组件大合集</a>
+                
+                    <a class="button is-link donate" href="https://www.jeffjade.com/2017/08/12/125-webpack-package-optimization-for-speed/" target="_blank">webpack优化篇</a>
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2016/04/26/web-optimiza/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">网页性能优化</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2015/10/26/function-call/">
+                <span class="level-item">函数的调用</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'Yg56JfDwplacGCRGw7zBJJJ9-gzGzoHsz',
+        app_key: 'qQlVh3DeDHFW5MbVHcAAuozl',
+        placeholder: 'ヾﾉ≧∀≦)o快来啊，一起快活啊!',
+        visitor: 'true'
+    });
+    var infoEle = document.querySelector('#comments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
+</script>
+
+    </div>
+</div>
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6 border-r-half" src="/images/avatar.jpg" alt="Norah">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Norah
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        An imaginative front-end worker
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Beijing</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        58
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        28
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        51
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/qilanbei" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Weibo" href="https://www.weibo.com/5419416738/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1">
+                
+                <i class="fab fa-weibo"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/qilanbei">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://www.facebook.com/profile.php?id=100017615744968">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="http://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="http://dribbble.com">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+
+    
+        
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/qilanbei" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">QILANBEI</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Babel/">
+            <span class="level-start">
+                <span class="level-item">Babel</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Babel-进阶/">
+            <span class="level-start">
+                <span class="level-item">Babel 进阶</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/CSS/">
+            <span class="level-start">
+                <span class="level-item">CSS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/CSS相关/">
+            <span class="level-start">
+                <span class="level-item">CSS相关</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Echarts/">
+            <span class="level-start">
+                <span class="level-item">Echarts</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Git相关/">
+            <span class="level-start">
+                <span class="level-item">Git相关</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/HTTP-相关/">
+            <span class="level-start">
+                <span class="level-item">HTTP 相关</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/JavaScript-小知识/">
+            <span class="level-start">
+                <span class="level-item">JavaScript 小知识</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">15</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/JavaScript-进阶/">
+            <span class="level-start">
+                <span class="level-item">JavaScript 进阶</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/NodeJS/">
+            <span class="level-start">
+                <span class="level-item">NodeJS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/TypeScript/">
+            <span class="level-start">
+                <span class="level-item">TypeScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Vue/">
+            <span class="level-start">
+                <span class="level-item">Vue</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/hexo/">
+            <span class="level-start">
+                <span class="level-item">hexo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/nginx/">
+            <span class="level-start">
+                <span class="level-item">nginx</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/react/">
+            <span class="level-start">
+                <span class="level-item">react</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/uni-app/">
+            <span class="level-start">
+                <span class="level-item">uni-app</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/前端工具/">
+            <span class="level-start">
+                <span class="level-item">前端工具</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/前端绘图/">
+            <span class="level-start">
+                <span class="level-item">前端绘图</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/前端辅助工具/">
+            <span class="level-start">
+                <span class="level-item">前端辅助工具</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/前端面试总结/">
+            <span class="level-start">
+                <span class="level-item">前端面试总结</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/总结/">
+            <span class="level-start">
+                <span class="level-item">总结</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/构建工具/">
+            <span class="level-start">
+                <span class="level-item">构建工具</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/浏览器工作相关/">
+            <span class="level-start">
+                <span class="level-item">浏览器工作相关</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/混合App开发/">
+            <span class="level-start">
+                <span class="level-item">混合App开发</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/终端命令/">
+            <span class="level-start">
+                <span class="level-item">终端命令</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/网页性能优化/">
+            <span class="level-start">
+                <span class="level-item">网页性能优化</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/语法相关/">
+            <span class="level-start">
+                <span class="level-item">语法相关</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/跨域/">
+            <span class="level-start">
+                <span class="level-item">跨域</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/Async-await的使用/" style="font-size: 10px;">Async/await的使用</a> <a href="/tags/Babel学习笔记/" style="font-size: 20px;">Babel学习笔记</a> <a href="/tags/CSS相关及一些兼容性问题/" style="font-size: 10px;">CSS相关及一些兼容性问题</a> <a href="/tags/Canvas学习/" style="font-size: 10px;">Canvas学习</a> <a href="/tags/Charles/" style="font-size: 20px;">Charles</a> <a href="/tags/D3-js学习/" style="font-size: 10px;">D3.js学习</a> <a href="/tags/Echarts-图表tooltip的自动播放/" style="font-size: 10px;">Echarts 图表tooltip的自动播放</a> <a href="/tags/Gulp学习/" style="font-size: 10px;">Gulp学习</a> <a href="/tags/HTTP-学习/" style="font-size: 10px;">HTTP 学习</a> <a href="/tags/JavaScript-小知识/" style="font-size: 10px;">JavaScript 小知识</a> <a href="/tags/JavaScript-标准内置对象-Object/" style="font-size: 15px;">JavaScript 标准内置对象 - Object</a> <a href="/tags/JavaScript-进阶/" style="font-size: 10px;">JavaScript 进阶</a> <a href="/tags/NPM/" style="font-size: 10px;">NPM</a> <a href="/tags/NodeJS学习/" style="font-size: 10px;">NodeJS学习</a> <a href="/tags/Vue-页面缓存/" style="font-size: 10px;">Vue 页面缓存</a> <a href="/tags/Vue入门学习/" style="font-size: 10px;">Vue入门学习</a> <a href="/tags/es6的扩展运算符/" style="font-size: 10px;">es6的扩展运算符</a> <a href="/tags/eslint使用笔记/" style="font-size: 10px;">eslint使用笔记</a> <a href="/tags/git学习/" style="font-size: 15px;">git学习</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iTerm2/" style="font-size: 10px;">iTerm2</a> <a href="/tags/instanceOf/" style="font-size: 10px;">instanceOf</a> <a href="/tags/javascript-原型链/" style="font-size: 10px;">javascript 原型链</a> <a href="/tags/javascript学习/" style="font-size: 10px;">javascript学习</a> <a href="/tags/javascript踩过的坑/" style="font-size: 10px;">javascript踩过的坑</a> <a href="/tags/js内存管理/" style="font-size: 15px;">js内存管理</a> <a href="/tags/js数组相关方法/" style="font-size: 10px;">js数组相关方法</a> <a href="/tags/let和const的区别/" style="font-size: 10px;">let和const的区别</a> <a href="/tags/nginx使用笔记/" style="font-size: 10px;">nginx使用笔记</a> <a href="/tags/react入门学习/" style="font-size: 10px;">react入门学习</a> <a href="/tags/token相关/" style="font-size: 10px;">token相关</a> <a href="/tags/uni-app/" style="font-size: 10px;">uni-app</a> <a href="/tags/vue父子组件间数据传递/" style="font-size: 10px;">vue父子组件间数据传递</a> <a href="/tags/yarn/" style="font-size: 10px;">yarn</a> <a href="/tags/你应该知道的css细节及技巧/" style="font-size: 10px;">你应该知道的css细节及技巧</a> <a href="/tags/关于JavaScript的一些总结/" style="font-size: 10px;">关于JavaScript的一些总结</a> <a href="/tags/关于react问题整理/" style="font-size: 10px;">关于react问题整理</a> <a href="/tags/关于正则表达式/" style="font-size: 10px;">关于正则表达式</a> <a href="/tags/函数的四种调用模式/" style="font-size: 10px;">函数的四种调用模式</a> <a href="/tags/前端工具/" style="font-size: 10px;">前端工具</a> <a href="/tags/如何搭建vue项目/" style="font-size: 10px;">如何搭建vue项目</a> <a href="/tags/更好的使用js编程/" style="font-size: 10px;">更好的使用js编程</a> <a href="/tags/有关跨域知识总结/" style="font-size: 10px;">有关跨域知识总结</a> <a href="/tags/模块化开发学习/" style="font-size: 10px;">模块化开发学习</a> <a href="/tags/浏览器兼容性/" style="font-size: 10px;">浏览器兼容性</a> <a href="/tags/浏览器加载解析过程/" style="font-size: 10px;">浏览器加载解析过程</a> <a href="/tags/混合App开发/" style="font-size: 10px;">混合App开发</a> <a href="/tags/终端命令/" style="font-size: 10px;">终端命令</a> <a href="/tags/网页性能优化/" style="font-size: 10px;">网页性能优化</a> <a href="/tags/自己面试题总结/" style="font-size: 10px;">自己面试题总结</a> <a href="/tags/问题总结/" style="font-size: 10px;">问题总结</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/11/26/typescript/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TypeScript学习之路">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-26T03:16:45.000Z">2020-11-26</time></div>
+                    <a href="/2020/11/26/typescript/" class="has-link-black-ter is-size-6">TypeScript学习之路</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/11/15/ts-init/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TypeScript初体验">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-15T10:04:27.000Z">2020-11-15</time></div>
+                    <a href="/2020/11/15/ts-init/" class="has-link-black-ter is-size-6">TypeScript初体验</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/10/16/uni-app/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="uni-app开发学习之路">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-16T07:54:46.000Z">2020-10-16</time></div>
+                    <a href="/2020/10/16/uni-app/" class="has-link-black-ter is-size-6">uni-app开发学习之路</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/uni-app/">uni-app</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/18/core-js/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="core-js@3">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-18T02:08:48.000Z">2020-08-18</time></div>
+                    <a href="/2020/08/18/core-js/" class="has-link-black-ter is-size-6">core-js@3</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Babel-进阶/">Babel 进阶</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/10/data-type-detection/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="判断数据类型的几种方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-10T14:34:20.000Z">2019-12-10</time></div>
+                    <a href="/2019/12/10/data-type-detection/" class="has-link-black-ter is-size-6">判断数据类型的几种方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript-小知识/">JavaScript 小知识</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Async-await的使用/">
+                        <span class="tag">Async/await的使用</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Babel学习笔记/">
+                        <span class="tag">Babel学习笔记</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/CSS相关及一些兼容性问题/">
+                        <span class="tag">CSS相关及一些兼容性问题</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Canvas学习/">
+                        <span class="tag">Canvas学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Charles/">
+                        <span class="tag">Charles</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/D3-js学习/">
+                        <span class="tag">D3.js学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Echarts-图表tooltip的自动播放/">
+                        <span class="tag">Echarts 图表tooltip的自动播放</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Gulp学习/">
+                        <span class="tag">Gulp学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/HTTP-学习/">
+                        <span class="tag">HTTP 学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript-小知识/">
+                        <span class="tag">JavaScript 小知识</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript-标准内置对象-Object/">
+                        <span class="tag">JavaScript 标准内置对象 - Object</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript-进阶/">
+                        <span class="tag">JavaScript 进阶</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NPM/">
+                        <span class="tag">NPM</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NodeJS学习/">
+                        <span class="tag">NodeJS学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue-页面缓存/">
+                        <span class="tag">Vue 页面缓存</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue入门学习/">
+                        <span class="tag">Vue入门学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/es6的扩展运算符/">
+                        <span class="tag">es6的扩展运算符</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/eslint使用笔记/">
+                        <span class="tag">eslint使用笔记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git学习/">
+                        <span class="tag">git学习</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/iTerm2/">
+                        <span class="tag">iTerm2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/instanceOf/">
+                        <span class="tag">instanceOf</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript-原型链/">
+                        <span class="tag">javascript 原型链</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript学习/">
+                        <span class="tag">javascript学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript踩过的坑/">
+                        <span class="tag">javascript踩过的坑</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/js内存管理/">
+                        <span class="tag">js内存管理</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/js数组相关方法/">
+                        <span class="tag">js数组相关方法</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/let和const的区别/">
+                        <span class="tag">let和const的区别</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nginx使用笔记/">
+                        <span class="tag">nginx使用笔记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/react入门学习/">
+                        <span class="tag">react入门学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/token相关/">
+                        <span class="tag">token相关</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/uni-app/">
+                        <span class="tag">uni-app</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vue父子组件间数据传递/">
+                        <span class="tag">vue父子组件间数据传递</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/yarn/">
+                        <span class="tag">yarn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/你应该知道的css细节及技巧/">
+                        <span class="tag">你应该知道的css细节及技巧</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/关于JavaScript的一些总结/">
+                        <span class="tag">关于JavaScript的一些总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/关于react问题整理/">
+                        <span class="tag">关于react问题整理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/关于正则表达式/">
+                        <span class="tag">关于正则表达式</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/函数的四种调用模式/">
+                        <span class="tag">函数的四种调用模式</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/前端工具/">
+                        <span class="tag">前端工具</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/如何搭建vue项目/">
+                        <span class="tag">如何搭建vue项目</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/更好的使用js编程/">
+                        <span class="tag">更好的使用js编程</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/有关跨域知识总结/">
+                        <span class="tag">有关跨域知识总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/模块化开发学习/">
+                        <span class="tag">模块化开发学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/浏览器兼容性/">
+                        <span class="tag">浏览器兼容性</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/浏览器加载解析过程/">
+                        <span class="tag">浏览器加载解析过程</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/混合App开发/">
+                        <span class="tag">混合App开发</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/终端命令/">
+                        <span class="tag">终端命令</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/网页性能优化/">
+                        <span class="tag">网页性能优化</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/自己面试题总结/">
+                        <span class="tag">自己面试题总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/问题总结/">
+                        <span class="tag">问题总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/11/26/typescript/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TypeScript学习之路">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-26T03:16:45.000Z">2020-11-26</time></div>
+                    <a href="/2020/11/26/typescript/" class="has-link-black-ter is-size-6">TypeScript学习之路</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/11/15/ts-init/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TypeScript初体验">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-15T10:04:27.000Z">2020-11-15</time></div>
+                    <a href="/2020/11/15/ts-init/" class="has-link-black-ter is-size-6">TypeScript初体验</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/10/16/uni-app/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="uni-app开发学习之路">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-16T07:54:46.000Z">2020-10-16</time></div>
+                    <a href="/2020/10/16/uni-app/" class="has-link-black-ter is-size-6">uni-app开发学习之路</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/uni-app/">uni-app</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/18/core-js/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="core-js@3">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-18T02:08:48.000Z">2020-08-18</time></div>
+                    <a href="/2020/08/18/core-js/" class="has-link-black-ter is-size-6">core-js@3</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Babel-进阶/">Babel 进阶</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/10/data-type-detection/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="判断数据类型的几种方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-10T14:34:20.000Z">2019-12-10</time></div>
+                    <a href="/2019/12/10/data-type-detection/" class="has-link-black-ter is-size-6">判断数据类型的几种方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript-小知识/">JavaScript 小知识</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Async-await的使用/">
+                        <span class="tag">Async/await的使用</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Babel学习笔记/">
+                        <span class="tag">Babel学习笔记</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/CSS相关及一些兼容性问题/">
+                        <span class="tag">CSS相关及一些兼容性问题</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Canvas学习/">
+                        <span class="tag">Canvas学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Charles/">
+                        <span class="tag">Charles</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/D3-js学习/">
+                        <span class="tag">D3.js学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Echarts-图表tooltip的自动播放/">
+                        <span class="tag">Echarts 图表tooltip的自动播放</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Gulp学习/">
+                        <span class="tag">Gulp学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/HTTP-学习/">
+                        <span class="tag">HTTP 学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript-小知识/">
+                        <span class="tag">JavaScript 小知识</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript-标准内置对象-Object/">
+                        <span class="tag">JavaScript 标准内置对象 - Object</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript-进阶/">
+                        <span class="tag">JavaScript 进阶</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NPM/">
+                        <span class="tag">NPM</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NodeJS学习/">
+                        <span class="tag">NodeJS学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue-页面缓存/">
+                        <span class="tag">Vue 页面缓存</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue入门学习/">
+                        <span class="tag">Vue入门学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/es6的扩展运算符/">
+                        <span class="tag">es6的扩展运算符</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/eslint使用笔记/">
+                        <span class="tag">eslint使用笔记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git学习/">
+                        <span class="tag">git学习</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/iTerm2/">
+                        <span class="tag">iTerm2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/instanceOf/">
+                        <span class="tag">instanceOf</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript-原型链/">
+                        <span class="tag">javascript 原型链</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript学习/">
+                        <span class="tag">javascript学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript踩过的坑/">
+                        <span class="tag">javascript踩过的坑</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/js内存管理/">
+                        <span class="tag">js内存管理</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/js数组相关方法/">
+                        <span class="tag">js数组相关方法</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/let和const的区别/">
+                        <span class="tag">let和const的区别</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nginx使用笔记/">
+                        <span class="tag">nginx使用笔记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/react入门学习/">
+                        <span class="tag">react入门学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/token相关/">
+                        <span class="tag">token相关</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/uni-app/">
+                        <span class="tag">uni-app</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vue父子组件间数据传递/">
+                        <span class="tag">vue父子组件间数据传递</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/yarn/">
+                        <span class="tag">yarn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/你应该知道的css细节及技巧/">
+                        <span class="tag">你应该知道的css细节及技巧</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/关于JavaScript的一些总结/">
+                        <span class="tag">关于JavaScript的一些总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/关于react问题整理/">
+                        <span class="tag">关于react问题整理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/关于正则表达式/">
+                        <span class="tag">关于正则表达式</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/函数的四种调用模式/">
+                        <span class="tag">函数的四种调用模式</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/前端工具/">
+                        <span class="tag">前端工具</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/如何搭建vue项目/">
+                        <span class="tag">如何搭建vue项目</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/更好的使用js编程/">
+                        <span class="tag">更好的使用js编程</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/有关跨域知识总结/">
+                        <span class="tag">有关跨域知识总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/模块化开发学习/">
+                        <span class="tag">模块化开发学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/浏览器兼容性/">
+                        <span class="tag">浏览器兼容性</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/浏览器加载解析过程/">
+                        <span class="tag">浏览器加载解析过程</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/混合App开发/">
+                        <span class="tag">混合App开发</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/终端命令/">
+                        <span class="tag">终端命令</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/网页性能优化/">
+                        <span class="tag">网页性能优化</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/自己面试题总结/">
+                        <span class="tag">自己面试题总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/问题总结/">
+                        <span class="tag">问题总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--<a class="footer-logo is-block has-mb-6" href="/">-->
+                <!---->
+                    <!--<img src="/" alt="Canvas学习笔记" height="28">-->
+                <!---->
+                <!--</a>-->
+                <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+                <p class="is-size-7">
+                    <!--Norah&nbsp;-->
+                <!-- Norah Powered by  -->
+                <!-- <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/qilanbei" target="_blank">qilanbei</a> -->
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                Visited by <span id="busuanzi_value_site_uv">0</span> users
+                </span> &copy; 2022
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/qilanbei">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("08/10/2018 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+    setInterval("createtime()",250);
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

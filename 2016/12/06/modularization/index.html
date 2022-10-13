@@ -1,0 +1,2780 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>模块化开发 - Talent and beauty coexist</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    
+    <meta name="description" content="关于模块化开发的学习笔记">
+<meta name="keywords" content="模块化开发学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模块化开发">
+<meta property="og:url" content="http://yoursite.com/2016/12/06/modularization/index.html">
+<meta property="og:site_name" content="Talent and beauty coexist">
+<meta property="og:description" content="关于模块化开发的学习笔记">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-21T06:53:50.361Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模块化开发">
+<meta name="twitter:description" content="关于模块化开发的学习笔记">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="../source/js/love.js"></script>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            <!---->
+                <!--<img src="/" alt="模块化开发" height="28">-->
+            <!---->
+                QILANBEI
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="http://github.com/qilanbei">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2016-12-06T02:35:08.000Z">2016-12-06</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/JavaScript-小知识/">JavaScript 小知识</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    23 minutes read (About 3489 words)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> 人浏览
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                模块化开发
+            
+        </h1>
+        <div class="content">
+            <ul>
+<li>关于模块化开发的学习笔记<a id="more"></a>
+<the rest of contents | 余下全文>
+
+</the></li>
+</ul>
+<h2 id="模块化开发"><a href="#模块化开发" class="headerlink" title="模块化开发"></a>模块化开发</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><h5 id="1-1-当你的网站开发越来越大复杂的时候，会经常遇到什么问题？"><a href="#1-1-当你的网站开发越来越大复杂的时候，会经常遇到什么问题？" class="headerlink" title="1.1 当你的网站开发越来越大复杂的时候，会经常遇到什么问题？"></a>1.1 当你的网站开发越来越大复杂的时候，会经常遇到什么问题？</h5><ul>
+<li>命名冲突</li>
+<li>文件依赖</li>
+<li>。。。。。。</li>
+<li>各种问题。。。</li>
+</ul>
+<h5 id="1-2-程序模块化开发优点"><a href="#1-2-程序模块化开发优点" class="headerlink" title="1.2 程序模块化开发优点"></a>1.2 程序模块化开发优点</h5><ul>
+<li>开发效率高<ul>
+<li>代码方便重用，别人开发的模块直接拿过来就可以使用，</li>
+<li>不需要重复开发类似的功能</li>
+</ul>
+</li>
+<li>方便后期维护<ul>
+<li>软件的声明周期中最长的阶段其实并不是开发阶段,<br>而是维护阶段，需求变更比较频繁，使用模块化的开发</li>
+</ul>
+</li>
+</ul>
+<h5 id="1-3-总结"><a href="#1-3-总结" class="headerlink" title="1.3 总结"></a>1.3 总结</h5><ul>
+<li>生产角度<br>  一种生产方式，生产效率高，维护成本低</li>
+<li>软件开发角度<br>  就是一种开发模式，写代码的一种方式，开发效率高，<br>  方便后期维护</li>
+</ul>
+<h5 id="1-4-非模块化开发的问题"><a href="#1-4-非模块化开发的问题" class="headerlink" title="1.4. 非模块化开发的问题"></a>1.4. 非模块化开发的问题</h5><ul>
+<li>命名冲突<br>  团队协作开发，不同开发人员的变量和函数命名可能<br>  相同</li>
+<li>文件依赖<br>  代码重用时，引入js文件的数目可能少了或者引入的<br>  顺序不对</li>
+</ul>
+<h5 id="1-5-模块的维护扩展-计算器实例"><a href="#1-5-模块的维护扩展-计算器实例" class="headerlink" title="1.5 模块的维护扩展(计算器实例)"></a>1.5 模块的维护扩展(计算器实例)</h5><h6 id="1-5-1-非模块化下的弊端"><a href="#1-5-1-非模块化下的弊端" class="headerlink" title="1.5.1 非模块化下的弊端"></a>1.5.1 非模块化下的弊端</h6><ul>
+<li>计算器模块：在全局定义四个分别用来计算加减乘除的四个函数</li>
+<li>全局函数形成的模块只能人为的认为它们属于一个模块</li>
+<li>但是程序并不能区分哪些函数是同一个模块<br>问题</li>
+<li>“污染”了全局变量，无法保证不与其它模块发生变量名冲突</li>
+<li>模块成员之间看不出直接关系</li>
+</ul>
+<h6 id="1-5-2-对象封装-–-命名空间"><a href="#1-5-2-对象封装-–-命名空间" class="headerlink" title="1.5.2 对象封装 – 命名空间"></a>1.5.2 对象封装 – 命名空间</h6><ul>
+<li>将原来的计算器的四个函数封装到一个对象命名空间下</li>
+<li>通过添加命名空间的形式从某种程度上解决了变量命名冲突的问题，但是并不能从根本上解决命名冲突</li>
+<li>从代码级别可以明显的区分出哪些函数属于同一个模块</li>
+<li>问题<ul>
+<li>暴露了所有的模块成员，内部状态可以被外部改写，不安全</li>
+<li>命名空间越来越长</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">第一个数：&lt;input id=<span class="hljs-string">'x'</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">"text"</span> name=<span class="hljs-string">'name'</span>&gt;</span><br><span class="line">	&lt;<span class="hljs-keyword">select</span> name=<span class="hljs-string">""</span> id=<span class="hljs-string">"opt"</span>&gt;</span><br><span class="line">		&lt;option value=<span class="hljs-string">"+"</span>&gt;+&lt;/option&gt;</span><br><span class="line">		&lt;option value=<span class="hljs-string">"-"</span>&gt;-&lt;/option&gt;</span><br><span class="line">		&lt;option value=<span class="hljs-string">"*"</span>&gt;*&lt;/option&gt;</span><br><span class="line">		&lt;option value=<span class="hljs-string">"/"</span>&gt;/&lt;/option&gt;</span><br><span class="line">	&lt;/<span class="hljs-keyword">select</span>&gt;</span><br><span class="line">	第二个数: &lt;input  id=<span class="hljs-string">'y'</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">"text"</span> name=<span class="hljs-string">'name'</span>&gt;</span><br><span class="line">	&lt;button <span class="hljs-keyword">type</span>=<span class="hljs-string">'button'</span> name=<span class="hljs-string">'button'</span> id=<span class="hljs-string">'btn'</span>&gt;=&lt;/button&gt;</span><br><span class="line">	结果：&lt;input <span class="hljs-keyword">type</span>=<span class="hljs-string">"text"</span> name=<span class="hljs-string">'name'</span> id=<span class="hljs-string">'result'</span>&gt;</span><br><span class="line">	&lt;script src=<span class="hljs-string">'./calculator.js'</span>&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		<span class="hljs-built_in">var</span> cal = (function(c)&#123;</span><br><span class="line">			c.divide = function(x,y)&#123;	<span class="hljs-keyword">return</span> x / y;	&#125;;</span><br><span class="line">			c.multiply = function(x,y)&#123; <span class="hljs-keyword">return</span> x * y;   &#125;</span><br><span class="line">			<span class="hljs-keyword">return</span> c;</span><br><span class="line">		&#125;)(window.cal||&#123;&#125;);</span><br><span class="line">		<span class="hljs-built_in">var</span> btn = document.getElementById(<span class="hljs-string">'btn'</span>);</span><br><span class="line">		btn.onclick = function()&#123;</span><br><span class="line">			<span class="hljs-comment">// 1. 获取文本框的值</span></span><br><span class="line">		<span class="hljs-built_in">var</span> x = parseInt(document.getElementById(<span class="hljs-string">'x'</span>).value);</span><br><span class="line">		<span class="hljs-built_in">var</span> y = parseInt(document.getElementById(<span class="hljs-string">'y'</span>).value);</span><br><span class="line">		<span class="hljs-comment">// 2. 获取运算符</span></span><br><span class="line">		<span class="hljs-built_in">var</span> opt = document.getElementById(<span class="hljs-string">'opt'</span>);</span><br><span class="line">		<span class="hljs-built_in">var</span> <span class="hljs-keyword">sum</span> = <span class="hljs-number">0</span>;</span><br><span class="line">		<span class="hljs-comment">// 3. 运算</span></span><br><span class="line">			switch(opt.value)&#123;</span><br><span class="line">				<span class="hljs-keyword">case</span> <span class="hljs-string">'+'</span>:<span class="hljs-keyword">sum</span> = cal.add(x,y);break;</span><br><span class="line">				<span class="hljs-keyword">case</span> <span class="hljs-string">'-'</span>:<span class="hljs-keyword">sum</span> = cal.sub(x,y);break;</span><br><span class="line">				<span class="hljs-keyword">case</span> <span class="hljs-string">'*'</span>:<span class="hljs-keyword">sum</span> = cal.multiply(x,y);break;</span><br><span class="line">				<span class="hljs-keyword">case</span> <span class="hljs-string">'/'</span>:<span class="hljs-keyword">sum</span> = cal.divide(x,y);break;</span><br><span class="line">				default:</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="hljs-built_in">var</span> result = document.getElementById(<span class="hljs-string">'result'</span>);</span><br><span class="line">			result.value = <span class="hljs-keyword">sum</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>私有共有成员分离<ul>
+<li>将命名空间形式的计算器模块封装为立即执行函数形式，通过在函数内部返回值得形式向外暴露</li>
+<li>私有空间的变量和函数不会影响全局作用域</li>
+<li>公开公有方法，隐藏私有空间内部的属性、元素</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">var</span> cal= (function()&#123;</span><br><span class="line">	<span class="hljs-keyword">return</span> &#123;</span><br><span class="line">		add:function(x,y)&#123;</span><br><span class="line">			<span class="hljs-keyword">return</span> x + y;</span><br><span class="line">		&#125;,</span><br><span class="line">		sub:function(x,y)&#123;</span><br><span class="line">			<span class="hljs-keyword">return</span> x - y;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><ul>
+<li>通过向对象的属性挂载功能实现扩展</li>
+<li>开闭原则</li>
+<li>代码健壮性判断</li>
+</ul>
+<h5 id="1-6-模块的第三方依赖"><a href="#1-6-模块的第三方依赖" class="headerlink" title="1.6 模块的第三方依赖"></a>1.6 模块的第三方依赖</h5><ul>
+<li>模块最好要保证模块的职责单一性，最好不要与程序的其它部分直接交互</li>
+<li>通过向匿名函数注入依赖项的形式，除了保证模块的独立性，还使模块之间的依赖关系变得明显<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;script src=<span class="hljs-string">'./jquery-1.11.1.min.js'</span>&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script src=<span class="hljs-string">'./third.js'</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>third.js:</p>
+<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//匿名自执行函数</span></span><br><span class="line">(function($,q,t)&#123;<span class="hljs-comment">//可以通过控制台报错来纠正</span></span><br><span class="line">	console.<span class="hljs-keyword">log</span>($);</span><br><span class="line">	$(<span class="hljs-string">'body'</span>).css(&#123;<span class="hljs-string">'backgroundColor'</span>:<span class="hljs-string">'green'</span>&#125;);</span><br><span class="line">&#125;(window.$||&#123;&#125;,window.q||&#123;&#125;,window.t||&#123;&#125;));<span class="hljs-comment">//对外显示出这段代码所依赖的第三方</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-SeaJS的使用"><a href="#2-SeaJS的使用" class="headerlink" title="2. SeaJS的使用"></a>2. SeaJS的使用</h3><p>一个基于CMD规范实现的模块化开发解决方案<br>作者：Alibaba 玉伯<br>官网：<a href="http://seajs.org/" target="_blank" rel="noopener">http://seajs.org/</a><br>github：<a href="https://github.com/seajs/seajs" target="_blank" rel="noopener">https://github.com/seajs/seajs</a><br>特性：<br>简单友好的模块定义规范<br>自然直观的代码组织方式</p>
+<h5 id="2-1-全局函数"><a href="#2-1-全局函数" class="headerlink" title="2.1 全局函数"></a>2.1 全局函数</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// js加载机制中,由上到下加载</span><br><span class="line">// 如果遇上变量的声明 是全局作用域</span><br><span class="line">// 当全局中出现两个同名变量时? 会被覆盖,  而不是先声明后不允许重复声明</span><br></pre></td></tr></table></figure>
+<ul>
+<li>文件引入顺序的依赖</li>
+<li>全局变量的污染,无法使用多个同名变量</li>
+<li>变量之间的关系不明显<h5 id="2-2-命名空间"><a href="#2-2-命名空间" class="headerlink" title="2.2 命名空间"></a>2.2 命名空间</h5></li>
+<li>解决了同名函数命名冲突问题</li>
+<li>对象将所有数据都向外暴露了,可以供外部修改,不安全<ul>
+<li>私有属性,一般不向外暴露,而是提供公共的访问方式<h5 id="2-3-划分私有命名空间"><a href="#2-3-划分私有命名空间" class="headerlink" title="2.3 划分私有命名空间"></a>2.3 划分私有命名空间</h5></li>
+</ul>
+</li>
+<li>1: 为了保证属性私有化,使用自执行函数,让变量是函数的作用域</li>
+<li>2: 不再将变量直接暴露,而是提供对应的访问方式</li>
+<li>3: 基于命名空间的保护,可以允许同名属性名称<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function getMoney()&#123;</span><br><span class="line">  return money;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="2-4-扩展与维护"><a href="#2-4-扩展与维护" class="headerlink" title="2.4 扩展与维护"></a>2.4 扩展与维护</h5><ul>
+<li>坚持开闭原则(对于添加开发,对于修改是封闭)</li>
+<li>使用自执行函数,将对象传递进来,进行属性的添加(挂载新属性)</li>
+<li>window.cal||{} 是为了保证程序的健壮性<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var cal = (function(c)&#123;</span><br><span class="line">    //添加乘法和除法功能</span><br><span class="line">    c.divide = function(x,y)&#123;//查找机制是当前没有,就向上级查找</span><br><span class="line">      return x/y;</span><br><span class="line">    &#125;</span><br><span class="line">    c.multiply = function(x,y)&#123;</span><br><span class="line">      return x * y;</span><br><span class="line">    &#125;</span><br><span class="line">     return c;//将对象返回回去</span><br><span class="line">&#125;)(window.cal||&#123;&#125;); //从当前window对象取cal对象,如果没有,就给空对象,</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="2-5-第三方依赖"><a href="#2-5-第三方依赖" class="headerlink" title="2.5 第三方依赖"></a>2.5 第三方依赖</h5><ul>
+<li>依赖没有文档说明:  根据报错一个个的来整</li>
+<li>依赖注入: 将自己逐级向上查找,转换为,通知外部传入<ul>
+<li>(window.$||{},wndow.q||{},wndow.t||{});  将需要的对象在参数列表声明</li>
+</ul>
+</li>
+</ul>
+<h5 id="2-6-模块化的好处"><a href="#2-6-模块化的好处" class="headerlink" title="2.6 模块化的好处"></a>2.6 模块化的好处</h5><ul>
+<li>模块化的好处: 生产效率高/便于维护/便于扩展/复用性高</li>
+</ul>
+<h5 id="2-7-模块化分类-CMD-amp-AMD"><a href="#2-7-模块化分类-CMD-amp-AMD" class="headerlink" title="2.7 模块化分类  CMD&amp;AMD"></a>2.7 模块化分类  CMD&amp;AMD</h5><ul>
+<li>CMD  推崇同步加载 加载机制: 延迟加载(滞后/懒加载)<ul>
+<li>开发代码的规范（严格来讲就是模块化） —制约 文本要求</li>
+<li>seajs 按照CMD实现（先有规范 后有实现）</li>
+<li>seajs 模块化加载框架  代码就是CMD代码 seajs作者 玉伯</li>
+</ul>
+</li>
+<li>AMD  推崇异步加载 加载机制: 前置加载(优先加载)<ul>
+<li>开发代码的规范（严格来讲就是模块化） —制约 文本要求</li>
+<li>require.js (老外开发)</li>
+</ul>
+</li>
+<li>先要根据规范才有实现 –&gt; seajs 或者 requireJS  <h5 id="2-8-使用步骤"><a href="#2-8-使用步骤" class="headerlink" title="2.8 使用步骤"></a>2.8 使用步骤</h5></li>
+</ul>
+<ol>
+<li><p>引入 sea.js 库</p>
+<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="hljs-string">'../code/seajs-3.0.0/dist/sea.js'</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动模块</p>
+<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">seajs.use(‘模块id’,function( 模块对象 )&#123; 业务代码 &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定义模块</p>
+</li>
+</ol>
+<ul>
+<li>由于需要用到module 当前模块得声明成define(function(require, exports, module)<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">define</span></span>(function(<span class="hljs-keyword">require</span>, exports, module)&#123; 模块代码 &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="4">
+<li>引入模块 获取返回值<br>（暴露接口）</li>
+</ol>
+<ul>
+<li>一个js文件通过 module.exports = 向外返回的对象,让外部拿到</li>
+<li>外部需要拿到对象 通过require(‘./spinning’);<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">define</span></span>(function(<span class="hljs-keyword">require</span>,exports,module)&#123;</span><br><span class="line">	<span class="hljs-comment">// 引入模块</span></span><br><span class="line">	<span class="hljs-built_in">var</span> xiaohong = <span class="hljs-keyword">require</span>(<span class="hljs-string">'./xiaohong'</span>);</span><br><span class="line">	console.<span class="hljs-keyword">log</span>(xiaohong);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="5">
+<li>导出模块</li>
+</ol>
+<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//定义一个模块</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">define</span></span>(function(<span class="hljs-keyword">require</span>,exports,module)&#123;</span><br><span class="line">	module.exports = <span class="hljs-string">'小红'</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="2-8-1-定义模块-define"><a href="#2-8-1-定义模块-define" class="headerlink" title="2.8.1 定义模块 define"></a>2.8.1 定义模块 define</h5><ul>
+<li>先有规范，后有实现</li>
+<li>在CMD规范中，一个模块就是一个js文件</li>
+<li>define 是一个全局函数，用来定义模块define( factory )<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 对象&#123;&#125;这种方式，外部会直接获取到该对象</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">define</span></span>(function(<span class="hljs-keyword">require</span>,exports,module)&#123;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 字符串</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">define</span></span>(<span class="hljs-string">'字符串'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 函数function( <span class="hljs-keyword">require</span>, exports, module )&#123; <span class="hljs-comment">// 模块代码 &#125;</span></span><br><span class="line">为了减少出错，定义函数的时候直接把这三个参数写上</span><br><span class="line">duidefine(&#123;name:<span class="hljs-string">'jack'</span>,<span class="hljs-string">'age'</span>:<span class="hljs-number">18</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="2-8-2-exports-和-module-exports"><a href="#2-8-2-exports-和-module-exports" class="headerlink" title="2.8.2 exports 和 module.exports"></a>2.8.2 exports 和 module.exports</h5><ul>
+<li>功能：通过给 exports或module.exports动态的挂载变量、函数或对象，外部会获取到该接口</li>
+<li>exports 等价于 module.exports<br>exports == module.exports  true</li>
+<li>可以通过多次给exports 挂载属性向外暴露</li>
+<li><p>不能直接给 exports 赋值</p>
+<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">eg: module.exports -&gt; 空对象 &lt;- exports</span><br><span class="line">当两者被赋值时 module.exports = <span class="hljs-string">'123'</span>;exports = <span class="hljs-string">'234'</span>;</span><br><span class="line">二者的指向改变  module.exports -&gt; <span class="hljs-string">'123'</span>;exports -&gt; <span class="hljs-string">'234'</span>;</span><br><span class="line">seajs内部机制是<span class="hljs-keyword">return</span> module.exports</span><br><span class="line">所以 返回的是module.exports的值</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果想暴露单个变量、函数或对象可以通过直接给 module.exports 赋值 即可</p>
+</li>
+</ul>
+<h5 id="2-8-3-启动模块-seajs-use"><a href="#2-8-3-启动模块-seajs-use" class="headerlink" title="2.8.3 启动模块 seajs.use"></a>2.8.3 启动模块 seajs.use</h5><ul>
+<li>在调用 seajs 之前，必须先引入 sea.js 文件</li>
+<li><p>通过 seajs.use() 函数可以启动模块–默认传递一个参数</p>
+<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(‘模块id’<span class="hljs-meta">[</span>,callback<span class="hljs-meta">]</span> )	加载一个模块，并执行回调函数</span><br><span class="line">( <span class="hljs-meta">[</span> ‘模块<span class="hljs-number">1</span>’, ‘模块<span class="hljs-number">2</span>’ <span class="hljs-meta">]</span>  <span class="hljs-meta">[</span>, callback<span class="hljs-meta">]</span> )</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>加载多个模块，并执行回调函数–传递多个参数 返回值一一对应传递的数组参数顺序<br>callback 参数是可选的<br>seajs.use 和 DOM ready 事件没有任何关系</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最好不要在 define 中 使用 seajs.use</p>
+</li>
+</ul>
+<h5 id="2-8-4-加载模块-require"><a href="#2-8-4-加载模块-require" class="headerlink" title="2.8.4 加载模块 require"></a>2.8.4 加载模块 require</h5><ul>
+<li>require(‘模块id路径字符串’) </li>
+<li>用于根据一个模块id加载该模块</li>
+<li>参数必须是一个字符串</li>
+<li>该方法返回值是 要加载的模块中的 module.exports 对象</li>
+<li>只能在模块环境define中使用，define(factory)的构造方法第一个参数必须命名为 require</li>
+<li>不要重命名require函数或者在任何作用域中给 require 重新赋值</li>
+</ul>
+<h5 id="2-8-5-模块标识"><a href="#2-8-5-模块标识" class="headerlink" title="2.8.5 模块标识"></a>2.8.5 模块标识</h5><ul>
+<li>模块标识就是一个字符串，用来标识模块</li>
+<li>模块标识可以不包含后缀名  .js</li>
+<li>以 . /或 ../ 开头的相对路径模块，相对于 require 所在模块的路径</li>
+<li>不以 ./ 或 ../ 开头的顶级标识，会相对于模块的基础路径解析（配置项中的base）</li>
+</ul>
+<ol>
+<li>相对路径 ./main.js</li>
+<li><p>绝对路径</p>
+<ul>
+<li>E:/frontend/employcourse/itcastCourse/课堂练习/14node/01-day/demo/10-path/main.js</li>
+<li>也可以是url地址： <a href="http://127.0.0.1:8080/js/a.js/js/a.js" target="_blank" rel="noopener">http://127.0.0.1:8080/js/a.js/js/a.js</a></li>
+</ul>
+</li>
+<li><p>‘base路径’: 默认就是seajs加载的路径 dist路径</p>
+<ul>
+<li>不能以./开头 </li>
+<li>不能以盘符开头 </li>
+<li>不能以/开头 </li>
+<li>直接是一个名称 可以/结尾<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">seajs.use(<span class="hljs-meta">[</span><span class="hljs-string">'abc'</span><span class="hljs-meta">]</span>,function()&#123;&#125;);</span><br><span class="line">//abc不存在 默认在这里找</span><br><span class="line">E:/frontend/employcourse/itcastCourse/课堂练习/14node/01-day/demo/seajs-3.0.0/dist/abc.js</span><br><span class="line">//默认就是seajs加载的路径 dist路径</span><br><span class="line">//如果在seajs加载的路径 dist路径下存在abc.js文件 就不会报错</span><br><span class="line">否则找不到abc会报错</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="2-9-高级配置SeaJS"><a href="#2-9-高级配置SeaJS" class="headerlink" title="2.9 高级配置SeaJS"></a>2.9 高级配置SeaJS</h5><ol>
+<li>alias：别名配置</li>
+</ol>
+<ul>
+<li>起一个别名 可以是绝对路径 不能是盘符目录<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">html文件：</span><br><span class="line">seajs.config(&#123;</span><br><span class="line">		alias:&#123;</span><br><span class="line">				<span class="hljs-string">'jack'</span>:<span class="hljs-string">'E:/frontend/employcourse/itcastCourse/课堂练习/14node/01-day/demo/11-config/b.js'</span><span class="hljs-comment">// 只能做文件的别名</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		<span class="hljs-comment">// seajs.use(['main'],function(a)&#123;&#125;);</span></span><br><span class="line">		seajs.use(<span class="hljs-meta">[</span><span class="hljs-string">'./tmp/main'</span><span class="hljs-meta">]</span>,function(a)&#123;&#125;);</span><br><span class="line">main.js文件:</span><br><span class="line">define(function(require,exports,module)&#123;</span><br><span class="line">     require('jack');</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li>paths：路径配置 (只能做文件的别名)</li>
+</ol>
+<ul>
+<li>给目录起一个别名<br>使用： require(对应的字段名)<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">html文件：</span><br><span class="line">seajs.config(&#123;</span><br><span class="line">			 paths:&#123;</span><br><span class="line">			<span class="hljs-string">'dirA'</span>:<span class="hljs-string">'E:/frontend/employcourse/itcastCourse/课堂练习/14node/01-day/demo/11-config'</span></span><br><span class="line">		 &#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		seajs.use(<span class="hljs-meta">[</span><span class="hljs-string">'./tmp/main'</span><span class="hljs-meta">]</span>,function(a)&#123;&#125;);</span><br><span class="line">main.js文件:</span><br><span class="line">define(function(require,exports,module)&#123;</span><br><span class="line">     require('dirA/b.js');</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="3">
+<li><p>base：基础路径</p>
+<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">html文件：</span><br><span class="line">seajs.config(&#123;</span><br><span class="line">		 base:<span class="hljs-string">'E:/frontend/employcourse/itcastCourse/课堂练习/14node/01-day/demo/11-config/tmp'</span></span><br><span class="line">		&#125;);</span><br><span class="line">		<span class="hljs-comment">// seajs.use(['main'],function(a)&#123;&#125;);</span></span><br><span class="line">		seajs.use(<span class="hljs-meta">[</span><span class="hljs-string">'./tmp/main'</span><span class="hljs-meta">]</span>,function(a)&#123;&#125;);</span><br><span class="line">main.js文件:</span><br><span class="line">define(function(require,exports,module)&#123;</span><br><span class="line">     require('../b.js');</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>vars：变量配置</p>
+</li>
+<li>map：映射配置</li>
+</ol>
+<ul>
+<li>应用场景：目录层级过深 或者跨盘符的情况就可以使用</li>
+</ul>
+<h5 id="3-0-前端模块自动化整合"><a href="#3-0-前端模块自动化整合" class="headerlink" title="3.0 前端模块自动化整合"></a>3.0 前端模块自动化整合</h5><ul>
+<li>减少请求 js代码合并</li>
+<li>合并的时候 如何区分模块<br>gulp gulp-concat<br>gulp-transport gulp-useref<br>seajs合并<br>本身index.html可以引入具体的文件,辨识<figure class="highlight lasso hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//生成的路径  已经根据dest函数指定的路径了</span></span><br><span class="line">&lt;!-- build:js js/seajs.js --&gt;</span><br><span class="line">	&lt;script src=<span class="hljs-string">'../../seajs-3.0.0/dist/sea.js'</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- build:js js/seajs.js --&gt;</span><br><span class="line"><span class="hljs-comment">//将src目录下的内容构建到dist目录下</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="4-seajs与require"><a href="#4-seajs与require" class="headerlink" title="4. seajs与require"></a>4. seajs与require</h5><p>两者区别：</p>
+<ul>
+<li>seajs：<ul>
+<li>同步加载</li>
+<li>加载机制：延迟加载 | 懒加载 | 滞后</li>
+<li>什么时候用什么时候加载</li>
+</ul>
+</li>
+<li>require.js:<ul>
+<li>推崇异步加载</li>
+<li>加载机制：加载前置 | 优先加载</li>
+<li>要用什么就先加载什么</li>
+</ul>
+</li>
+</ul>
+<h3 id="use-参数方式-异步加载-让用户不会觉得加载慢"><a href="#use-参数方式-异步加载-让用户不会觉得加载慢" class="headerlink" title="use 参数方式 异步加载  让用户不会觉得加载慢"></a>use 参数方式 异步加载  让用户不会觉得加载慢</h3><h3 id="require-特点"><a href="#require-特点" class="headerlink" title="require 特点"></a>require 特点</h3><ul>
+<li>require 加载机制中 模块优先从缓存中获取 如果缓存中存在 就取 不存在 就加载</li>
+<li>异步调用<ul>
+<li>可以使用： require.async()</li>
+</ul>
+</li>
+<li><p>不管异步调用多少次  都是同步优先</p>
+<ul>
+<li>异步就是不阻塞 后续代码执行</li>
+</ul>
+<h3 id="两种路径类别"><a href="#两种路径类别" class="headerlink" title="两种路径类别"></a>两种路径类别</h3></li>
+<li>补上.js也可以 相对路径 ./main.js</li>
+<li>绝对路径  带盘符<ul>
+<li>绝对路径还可以是url路径 <a href="http://xxx.com" target="_blank" rel="noopener">http://xxx.com</a></li>
+</ul>
+</li>
+<li><p>base路径 默认就是seajs加载的路径 dist路径</p>
+<ul>
+<li>不能以./开头 不能以盘符开头 不能以/开头 直接是一个名称 可以/结尾</li>
+</ul>
+<h3 id="高级配置"><a href="#高级配置" class="headerlink" title="高级配置"></a>高级配置</h3></li>
+<li>alias 指定一个文件的别名 可以是绝对路径 不能是盘符目录</li>
+<li>paths 给目录起一个别名<ul>
+<li>如何使用? require(对应的字段名)</li>
+</ul>
+</li>
+<li><p>base 基础路径<br>基于非绝对路径 非相对路径  才去处理</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>应用场景 目录层级过深或者跨盘符的情况就可以使用</p>
+</li>
+</ul>
+<h3 id="前端模块自动化整合"><a href="#前端模块自动化整合" class="headerlink" title="前端模块自动化整合"></a>前端模块自动化整合</h3><ul>
+<li>减少请求 js代码合并</li>
+<li>合并的时候  如何区分模块<br>gulp gulp-concat gulp-seajs-transport gulp-useref<br>本身index.html 可以引入具体的文件,辨识<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>将src目录下的内容构建到dist目录</p>
+<h3 id="requireJS"><a href="#requireJS" class="headerlink" title="requireJS"></a>requireJS</h3><ul>
+<li>引入</li>
+<li>启动模块 requirejs([依赖的模块1，依赖的模块2],function(模块1的返回值，模块2的返回值){</li>
+</ul>
+<p>})</p>
+<ul>
+<li>require引入的时候必须是数组 推荐：其他模块define的时候也用数组</li>
+<li>define([依赖的模块1，依赖的模块2],(模块1的返回值，模块2的返回值){}</li>
+<li>接受模块的返回值，function的参数中接受（模块1的返回值）</li>
+<li>向外导出 函数内直接return</li>
+</ul>
+<h3 id="seajs和requireJS的区别"><a href="#seajs和requireJS的区别" class="headerlink" title="seajs和requireJS的区别"></a>seajs和requireJS的区别</h3><ul>
+<li>代码的样子：requirejs 依赖向声明前置 seajs声明滞后</li>
+<li>加载机制：requirejs加载前置 seajs加载滞后（何时用何时加载）</li>
+<li>CMD 和AMD CMD推崇同步 AMD推崇异步</li>
+<li>时间换空间</li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/模块化开发学习/">模块化开发学习</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Recommendable website</h3>
+        <div class="buttons is-centered">
+            
+                    <a class="button is-info donate" href="https://wangchujiang.com/awesome-mac/" target="_blank">Awesome Mac</a>
+                
+                    <a class="button is-failed donate" href="http://jsdig.com/" target="_blank">前端导航网</a>
+                
+                    <a class="button is-success donate" href="http://www.worldhello.net/gotgit/index.html" target="_blank">Git权威指南</a>
+                
+                    <a class="button is-warning donate" href="https://www.yiibai.com/git" target="_blank">Git教程_中文</a>
+                
+                    <a class="button is-danger donate" href="https://www.zhihu.com/question/28478379" target="_blank">前端逛哪些网站--知乎</a>
+                
+                    <a class="button is-warning donate" href="https://cnodejs.org/topic/56a050ac8392272262331d62" target="_blank">每天一条JS小知识</a>
+                
+                    <a class="button is-primary donate" href="http://www.xuanfengge.com/he-sets-the-front-end-component-library-the-essential-collection.html" target="_blank">前端组件大合集</a>
+                
+                    <a class="button is-link donate" href="https://www.jeffjade.com/2017/08/12/125-webpack-package-optimization-for-speed/" target="_blank">webpack优化篇</a>
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2017/01/03/token/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">token相关</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2016/11/26/hybridApp/">
+                <span class="level-item">混合App开发介绍</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'Yg56JfDwplacGCRGw7zBJJJ9-gzGzoHsz',
+        app_key: 'qQlVh3DeDHFW5MbVHcAAuozl',
+        placeholder: 'ヾﾉ≧∀≦)o快来啊，一起快活啊!',
+        visitor: 'true'
+    });
+    var infoEle = document.querySelector('#comments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
+</script>
+
+    </div>
+</div>
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6 border-r-half" src="/images/avatar.jpg" alt="Norah">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Norah
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        An imaginative front-end worker
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Beijing</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        58
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        28
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        51
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/qilanbei" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Weibo" href="https://www.weibo.com/5419416738/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1">
+                
+                <i class="fab fa-weibo"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/qilanbei">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://www.facebook.com/profile.php?id=100017615744968">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="http://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="http://dribbble.com">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+
+    
+        
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/qilanbei" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">QILANBEI</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Babel/">
+            <span class="level-start">
+                <span class="level-item">Babel</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Babel-进阶/">
+            <span class="level-start">
+                <span class="level-item">Babel 进阶</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/CSS/">
+            <span class="level-start">
+                <span class="level-item">CSS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/CSS相关/">
+            <span class="level-start">
+                <span class="level-item">CSS相关</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Echarts/">
+            <span class="level-start">
+                <span class="level-item">Echarts</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Git相关/">
+            <span class="level-start">
+                <span class="level-item">Git相关</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/HTTP-相关/">
+            <span class="level-start">
+                <span class="level-item">HTTP 相关</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/JavaScript-小知识/">
+            <span class="level-start">
+                <span class="level-item">JavaScript 小知识</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">15</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/JavaScript-进阶/">
+            <span class="level-start">
+                <span class="level-item">JavaScript 进阶</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/NodeJS/">
+            <span class="level-start">
+                <span class="level-item">NodeJS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/TypeScript/">
+            <span class="level-start">
+                <span class="level-item">TypeScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Vue/">
+            <span class="level-start">
+                <span class="level-item">Vue</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/hexo/">
+            <span class="level-start">
+                <span class="level-item">hexo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/nginx/">
+            <span class="level-start">
+                <span class="level-item">nginx</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/react/">
+            <span class="level-start">
+                <span class="level-item">react</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/uni-app/">
+            <span class="level-start">
+                <span class="level-item">uni-app</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/前端工具/">
+            <span class="level-start">
+                <span class="level-item">前端工具</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/前端绘图/">
+            <span class="level-start">
+                <span class="level-item">前端绘图</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/前端辅助工具/">
+            <span class="level-start">
+                <span class="level-item">前端辅助工具</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/前端面试总结/">
+            <span class="level-start">
+                <span class="level-item">前端面试总结</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/总结/">
+            <span class="level-start">
+                <span class="level-item">总结</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/构建工具/">
+            <span class="level-start">
+                <span class="level-item">构建工具</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/浏览器工作相关/">
+            <span class="level-start">
+                <span class="level-item">浏览器工作相关</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/混合App开发/">
+            <span class="level-start">
+                <span class="level-item">混合App开发</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/终端命令/">
+            <span class="level-start">
+                <span class="level-item">终端命令</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/网页性能优化/">
+            <span class="level-start">
+                <span class="level-item">网页性能优化</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/语法相关/">
+            <span class="level-start">
+                <span class="level-item">语法相关</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/跨域/">
+            <span class="level-start">
+                <span class="level-item">跨域</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/Async-await的使用/" style="font-size: 10px;">Async/await的使用</a> <a href="/tags/Babel学习笔记/" style="font-size: 20px;">Babel学习笔记</a> <a href="/tags/CSS相关及一些兼容性问题/" style="font-size: 10px;">CSS相关及一些兼容性问题</a> <a href="/tags/Canvas学习/" style="font-size: 10px;">Canvas学习</a> <a href="/tags/Charles/" style="font-size: 20px;">Charles</a> <a href="/tags/D3-js学习/" style="font-size: 10px;">D3.js学习</a> <a href="/tags/Echarts-图表tooltip的自动播放/" style="font-size: 10px;">Echarts 图表tooltip的自动播放</a> <a href="/tags/Gulp学习/" style="font-size: 10px;">Gulp学习</a> <a href="/tags/HTTP-学习/" style="font-size: 10px;">HTTP 学习</a> <a href="/tags/JavaScript-小知识/" style="font-size: 10px;">JavaScript 小知识</a> <a href="/tags/JavaScript-标准内置对象-Object/" style="font-size: 15px;">JavaScript 标准内置对象 - Object</a> <a href="/tags/JavaScript-进阶/" style="font-size: 10px;">JavaScript 进阶</a> <a href="/tags/NPM/" style="font-size: 10px;">NPM</a> <a href="/tags/NodeJS学习/" style="font-size: 10px;">NodeJS学习</a> <a href="/tags/Vue-页面缓存/" style="font-size: 10px;">Vue 页面缓存</a> <a href="/tags/Vue入门学习/" style="font-size: 10px;">Vue入门学习</a> <a href="/tags/es6的扩展运算符/" style="font-size: 10px;">es6的扩展运算符</a> <a href="/tags/eslint使用笔记/" style="font-size: 10px;">eslint使用笔记</a> <a href="/tags/git学习/" style="font-size: 15px;">git学习</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iTerm2/" style="font-size: 10px;">iTerm2</a> <a href="/tags/instanceOf/" style="font-size: 10px;">instanceOf</a> <a href="/tags/javascript-原型链/" style="font-size: 10px;">javascript 原型链</a> <a href="/tags/javascript学习/" style="font-size: 10px;">javascript学习</a> <a href="/tags/javascript踩过的坑/" style="font-size: 10px;">javascript踩过的坑</a> <a href="/tags/js内存管理/" style="font-size: 15px;">js内存管理</a> <a href="/tags/js数组相关方法/" style="font-size: 10px;">js数组相关方法</a> <a href="/tags/let和const的区别/" style="font-size: 10px;">let和const的区别</a> <a href="/tags/nginx使用笔记/" style="font-size: 10px;">nginx使用笔记</a> <a href="/tags/react入门学习/" style="font-size: 10px;">react入门学习</a> <a href="/tags/token相关/" style="font-size: 10px;">token相关</a> <a href="/tags/uni-app/" style="font-size: 10px;">uni-app</a> <a href="/tags/vue父子组件间数据传递/" style="font-size: 10px;">vue父子组件间数据传递</a> <a href="/tags/yarn/" style="font-size: 10px;">yarn</a> <a href="/tags/你应该知道的css细节及技巧/" style="font-size: 10px;">你应该知道的css细节及技巧</a> <a href="/tags/关于JavaScript的一些总结/" style="font-size: 10px;">关于JavaScript的一些总结</a> <a href="/tags/关于react问题整理/" style="font-size: 10px;">关于react问题整理</a> <a href="/tags/关于正则表达式/" style="font-size: 10px;">关于正则表达式</a> <a href="/tags/函数的四种调用模式/" style="font-size: 10px;">函数的四种调用模式</a> <a href="/tags/前端工具/" style="font-size: 10px;">前端工具</a> <a href="/tags/如何搭建vue项目/" style="font-size: 10px;">如何搭建vue项目</a> <a href="/tags/更好的使用js编程/" style="font-size: 10px;">更好的使用js编程</a> <a href="/tags/有关跨域知识总结/" style="font-size: 10px;">有关跨域知识总结</a> <a href="/tags/模块化开发学习/" style="font-size: 10px;">模块化开发学习</a> <a href="/tags/浏览器兼容性/" style="font-size: 10px;">浏览器兼容性</a> <a href="/tags/浏览器加载解析过程/" style="font-size: 10px;">浏览器加载解析过程</a> <a href="/tags/混合App开发/" style="font-size: 10px;">混合App开发</a> <a href="/tags/终端命令/" style="font-size: 10px;">终端命令</a> <a href="/tags/网页性能优化/" style="font-size: 10px;">网页性能优化</a> <a href="/tags/自己面试题总结/" style="font-size: 10px;">自己面试题总结</a> <a href="/tags/问题总结/" style="font-size: 10px;">问题总结</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/11/26/typescript/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TypeScript学习之路">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-26T03:16:45.000Z">2020-11-26</time></div>
+                    <a href="/2020/11/26/typescript/" class="has-link-black-ter is-size-6">TypeScript学习之路</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/11/15/ts-init/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TypeScript初体验">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-15T10:04:27.000Z">2020-11-15</time></div>
+                    <a href="/2020/11/15/ts-init/" class="has-link-black-ter is-size-6">TypeScript初体验</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/10/16/uni-app/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="uni-app开发学习之路">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-16T07:54:46.000Z">2020-10-16</time></div>
+                    <a href="/2020/10/16/uni-app/" class="has-link-black-ter is-size-6">uni-app开发学习之路</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/uni-app/">uni-app</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/18/core-js/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="core-js@3">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-18T02:08:48.000Z">2020-08-18</time></div>
+                    <a href="/2020/08/18/core-js/" class="has-link-black-ter is-size-6">core-js@3</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Babel-进阶/">Babel 进阶</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/10/data-type-detection/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="判断数据类型的几种方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-10T14:34:20.000Z">2019-12-10</time></div>
+                    <a href="/2019/12/10/data-type-detection/" class="has-link-black-ter is-size-6">判断数据类型的几种方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript-小知识/">JavaScript 小知识</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Async-await的使用/">
+                        <span class="tag">Async/await的使用</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Babel学习笔记/">
+                        <span class="tag">Babel学习笔记</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/CSS相关及一些兼容性问题/">
+                        <span class="tag">CSS相关及一些兼容性问题</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Canvas学习/">
+                        <span class="tag">Canvas学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Charles/">
+                        <span class="tag">Charles</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/D3-js学习/">
+                        <span class="tag">D3.js学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Echarts-图表tooltip的自动播放/">
+                        <span class="tag">Echarts 图表tooltip的自动播放</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Gulp学习/">
+                        <span class="tag">Gulp学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/HTTP-学习/">
+                        <span class="tag">HTTP 学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript-小知识/">
+                        <span class="tag">JavaScript 小知识</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript-标准内置对象-Object/">
+                        <span class="tag">JavaScript 标准内置对象 - Object</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript-进阶/">
+                        <span class="tag">JavaScript 进阶</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NPM/">
+                        <span class="tag">NPM</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NodeJS学习/">
+                        <span class="tag">NodeJS学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue-页面缓存/">
+                        <span class="tag">Vue 页面缓存</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue入门学习/">
+                        <span class="tag">Vue入门学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/es6的扩展运算符/">
+                        <span class="tag">es6的扩展运算符</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/eslint使用笔记/">
+                        <span class="tag">eslint使用笔记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git学习/">
+                        <span class="tag">git学习</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/iTerm2/">
+                        <span class="tag">iTerm2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/instanceOf/">
+                        <span class="tag">instanceOf</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript-原型链/">
+                        <span class="tag">javascript 原型链</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript学习/">
+                        <span class="tag">javascript学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript踩过的坑/">
+                        <span class="tag">javascript踩过的坑</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/js内存管理/">
+                        <span class="tag">js内存管理</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/js数组相关方法/">
+                        <span class="tag">js数组相关方法</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/let和const的区别/">
+                        <span class="tag">let和const的区别</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nginx使用笔记/">
+                        <span class="tag">nginx使用笔记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/react入门学习/">
+                        <span class="tag">react入门学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/token相关/">
+                        <span class="tag">token相关</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/uni-app/">
+                        <span class="tag">uni-app</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vue父子组件间数据传递/">
+                        <span class="tag">vue父子组件间数据传递</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/yarn/">
+                        <span class="tag">yarn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/你应该知道的css细节及技巧/">
+                        <span class="tag">你应该知道的css细节及技巧</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/关于JavaScript的一些总结/">
+                        <span class="tag">关于JavaScript的一些总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/关于react问题整理/">
+                        <span class="tag">关于react问题整理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/关于正则表达式/">
+                        <span class="tag">关于正则表达式</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/函数的四种调用模式/">
+                        <span class="tag">函数的四种调用模式</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/前端工具/">
+                        <span class="tag">前端工具</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/如何搭建vue项目/">
+                        <span class="tag">如何搭建vue项目</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/更好的使用js编程/">
+                        <span class="tag">更好的使用js编程</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/有关跨域知识总结/">
+                        <span class="tag">有关跨域知识总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/模块化开发学习/">
+                        <span class="tag">模块化开发学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/浏览器兼容性/">
+                        <span class="tag">浏览器兼容性</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/浏览器加载解析过程/">
+                        <span class="tag">浏览器加载解析过程</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/混合App开发/">
+                        <span class="tag">混合App开发</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/终端命令/">
+                        <span class="tag">终端命令</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/网页性能优化/">
+                        <span class="tag">网页性能优化</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/自己面试题总结/">
+                        <span class="tag">自己面试题总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/问题总结/">
+                        <span class="tag">问题总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/11/26/typescript/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TypeScript学习之路">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-26T03:16:45.000Z">2020-11-26</time></div>
+                    <a href="/2020/11/26/typescript/" class="has-link-black-ter is-size-6">TypeScript学习之路</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/11/15/ts-init/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TypeScript初体验">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-15T10:04:27.000Z">2020-11-15</time></div>
+                    <a href="/2020/11/15/ts-init/" class="has-link-black-ter is-size-6">TypeScript初体验</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TypeScript/">TypeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/10/16/uni-app/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="uni-app开发学习之路">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-16T07:54:46.000Z">2020-10-16</time></div>
+                    <a href="/2020/10/16/uni-app/" class="has-link-black-ter is-size-6">uni-app开发学习之路</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/uni-app/">uni-app</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/18/core-js/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="core-js@3">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-18T02:08:48.000Z">2020-08-18</time></div>
+                    <a href="/2020/08/18/core-js/" class="has-link-black-ter is-size-6">core-js@3</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Babel-进阶/">Babel 进阶</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/10/data-type-detection/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="判断数据类型的几种方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-10T14:34:20.000Z">2019-12-10</time></div>
+                    <a href="/2019/12/10/data-type-detection/" class="has-link-black-ter is-size-6">判断数据类型的几种方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript-小知识/">JavaScript 小知识</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Async-await的使用/">
+                        <span class="tag">Async/await的使用</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Babel学习笔记/">
+                        <span class="tag">Babel学习笔记</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/CSS相关及一些兼容性问题/">
+                        <span class="tag">CSS相关及一些兼容性问题</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Canvas学习/">
+                        <span class="tag">Canvas学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Charles/">
+                        <span class="tag">Charles</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/D3-js学习/">
+                        <span class="tag">D3.js学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Echarts-图表tooltip的自动播放/">
+                        <span class="tag">Echarts 图表tooltip的自动播放</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Gulp学习/">
+                        <span class="tag">Gulp学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/HTTP-学习/">
+                        <span class="tag">HTTP 学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript-小知识/">
+                        <span class="tag">JavaScript 小知识</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript-标准内置对象-Object/">
+                        <span class="tag">JavaScript 标准内置对象 - Object</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript-进阶/">
+                        <span class="tag">JavaScript 进阶</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NPM/">
+                        <span class="tag">NPM</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NodeJS学习/">
+                        <span class="tag">NodeJS学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue-页面缓存/">
+                        <span class="tag">Vue 页面缓存</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue入门学习/">
+                        <span class="tag">Vue入门学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/es6的扩展运算符/">
+                        <span class="tag">es6的扩展运算符</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/eslint使用笔记/">
+                        <span class="tag">eslint使用笔记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git学习/">
+                        <span class="tag">git学习</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/iTerm2/">
+                        <span class="tag">iTerm2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/instanceOf/">
+                        <span class="tag">instanceOf</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript-原型链/">
+                        <span class="tag">javascript 原型链</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript学习/">
+                        <span class="tag">javascript学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/javascript踩过的坑/">
+                        <span class="tag">javascript踩过的坑</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/js内存管理/">
+                        <span class="tag">js内存管理</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/js数组相关方法/">
+                        <span class="tag">js数组相关方法</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/let和const的区别/">
+                        <span class="tag">let和const的区别</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nginx使用笔记/">
+                        <span class="tag">nginx使用笔记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/react入门学习/">
+                        <span class="tag">react入门学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/token相关/">
+                        <span class="tag">token相关</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/uni-app/">
+                        <span class="tag">uni-app</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vue父子组件间数据传递/">
+                        <span class="tag">vue父子组件间数据传递</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/yarn/">
+                        <span class="tag">yarn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/你应该知道的css细节及技巧/">
+                        <span class="tag">你应该知道的css细节及技巧</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/关于JavaScript的一些总结/">
+                        <span class="tag">关于JavaScript的一些总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/关于react问题整理/">
+                        <span class="tag">关于react问题整理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/关于正则表达式/">
+                        <span class="tag">关于正则表达式</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/函数的四种调用模式/">
+                        <span class="tag">函数的四种调用模式</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/前端工具/">
+                        <span class="tag">前端工具</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/如何搭建vue项目/">
+                        <span class="tag">如何搭建vue项目</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/更好的使用js编程/">
+                        <span class="tag">更好的使用js编程</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/有关跨域知识总结/">
+                        <span class="tag">有关跨域知识总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/模块化开发学习/">
+                        <span class="tag">模块化开发学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/浏览器兼容性/">
+                        <span class="tag">浏览器兼容性</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/浏览器加载解析过程/">
+                        <span class="tag">浏览器加载解析过程</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/混合App开发/">
+                        <span class="tag">混合App开发</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/终端命令/">
+                        <span class="tag">终端命令</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/网页性能优化/">
+                        <span class="tag">网页性能优化</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/自己面试题总结/">
+                        <span class="tag">自己面试题总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/问题总结/">
+                        <span class="tag">问题总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--<a class="footer-logo is-block has-mb-6" href="/">-->
+                <!---->
+                    <!--<img src="/" alt="模块化开发" height="28">-->
+                <!---->
+                <!--</a>-->
+                <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+                <p class="is-size-7">
+                    <!--Norah&nbsp;-->
+                <!-- Norah Powered by  -->
+                <!-- <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/qilanbei" target="_blank">qilanbei</a> -->
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                Visited by <span id="busuanzi_value_site_uv">0</span> users
+                </span> &copy; 2022
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/qilanbei">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("08/10/2018 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+    setInterval("createtime()",250);
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
